@@ -24,3 +24,4 @@ C:\Users\pedro.hdsantos4\source\repos\Paobom\Paobom\bin\Debug\net8.0-windows\run
 C:\Users\pedro.hdsantos4\source\repos\Paobom\Paobom\bin\Debug\net8.0-windows\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
 C:\Users\pedro.hdsantos4\source\repos\Paobom\Paobom\obj\Debug\net8.0-windows\Paobom.csproj.AssemblyReference.cache
 C:\Users\pedro.hdsantos4\source\repos\Paobom\Paobom\obj\Debug\net8.0-windows\Paobom.csproj.CopyComplete
+C:\Users\pedro.hdsantos4\source\repos\Paobom\Paobom\obj\Debug\net8.0-windows\Paobom.FormCadastraProdutos.resources

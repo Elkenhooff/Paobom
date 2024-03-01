@@ -103,6 +103,7 @@
             cadastroDeProdutosToolStripMenuItem.Name = "cadastroDeProdutosToolStripMenuItem";
             cadastroDeProdutosToolStripMenuItem.Size = new Size(266, 26);
             cadastroDeProdutosToolStripMenuItem.Text = "Cadastro de Produtos";
+            cadastroDeProdutosToolStripMenuItem.Click += cadastroDeProdutosToolStripMenuItem_Click;
             // 
             // FormPaoBom
             // 
