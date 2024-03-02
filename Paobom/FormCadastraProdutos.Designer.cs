@@ -93,6 +93,7 @@
             comboBox1.FormattingEnabled = true;
             comboBox1.Items.AddRange(new object[] { "Unidade", "KG" });
             comboBox1.Location = new Point(6, 187);
+            comboBox1.MaxLength = 1;
             comboBox1.Name = "comboBox1";
             comboBox1.Size = new Size(221, 26);
             comboBox1.TabIndex = 11;

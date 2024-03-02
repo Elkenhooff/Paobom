@@ -26,7 +26,7 @@ namespace Paobom
                 SqlConnection conexao = new SqlConnection(BD.StringConexao);
 
                 conexao.Open();
-                MessageBox.Show("Conexão bem sucedida", "Teste", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show(BD.caminhoBanco, "Conexão bem sucedida", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             catch (Exception abc)
             {
