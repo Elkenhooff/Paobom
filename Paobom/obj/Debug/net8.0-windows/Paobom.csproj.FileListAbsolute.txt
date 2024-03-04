@@ -52,3 +52,4 @@ C:\Users\ricar\source\repos\Paobom\Paobom\obj\Debug\net8.0-windows\refint\Paobom
 C:\Users\ricar\source\repos\Paobom\Paobom\obj\Debug\net8.0-windows\Paobom.pdb
 C:\Users\ricar\source\repos\Paobom\Paobom\obj\Debug\net8.0-windows\Paobom.genruntimeconfig.cache
 C:\Users\ricar\source\repos\Paobom\Paobom\obj\Debug\net8.0-windows\ref\Paobom.dll
+C:\Users\pedro.hdsantos4\source\repos\Paobom\Paobom\obj\Debug\net8.0-windows\Paobom.sourcelink.json
