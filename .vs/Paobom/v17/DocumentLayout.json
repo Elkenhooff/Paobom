@@ -1,7 +1,16 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\ricar\\OneDrive\\Documentos\\GitHub\\Paobom\\",
-  "Documents": [],
+  "WorkspaceRootPath": "C:\\Users\\aluno\\source\\repos\\Paobom\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{7348BC35-AC96-4063-AB84-7FD34256CC3F}|Paobom\\Paobom.csproj|c:\\users\\aluno\\source\\repos\\paobom\\paobom\\formcadastrafuncionarios.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{7348BC35-AC96-4063-AB84-7FD34256CC3F}|Paobom\\Paobom.csproj|solutionrelative:paobom\\formcadastrafuncionarios.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7348BC35-AC96-4063-AB84-7FD34256CC3F}|Paobom\\Paobom.csproj|C:\\Users\\aluno\\source\\repos\\Paobom\\paobom\\formstart.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7348BC35-AC96-4063-AB84-7FD34256CC3F}|Paobom\\Paobom.csproj|solutionrelative:paobom\\formstart.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
@@ -9,7 +18,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": -1,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Bookmark",
@@ -22,6 +31,31 @@
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{eefa5220-e298-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "FormCadastraFuncionarios.cs [Projeto]",
+              "DocumentMoniker": "C:\\Users\\aluno\\source\\repos\\Paobom\\Paobom\\FormCadastraFuncionarios.cs",
+              "RelativeDocumentMoniker": "Paobom\\FormCadastraFuncionarios.cs",
+              "ToolTip": "C:\\Users\\aluno\\source\\repos\\Paobom\\Paobom\\FormCadastraFuncionarios.cs [Projeto]",
+              "RelativeToolTip": "Paobom\\FormCadastraFuncionarios.cs [Projeto]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-05T00:18:38.207Z",
+              "EditorCaption": " [Projeto]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "FormStart.cs",
+              "DocumentMoniker": "C:\\Users\\aluno\\source\\repos\\Paobom\\Paobom\\FormStart.cs",
+              "RelativeDocumentMoniker": "Paobom\\FormStart.cs",
+              "ToolTip": "C:\\Users\\aluno\\source\\repos\\Paobom\\Paobom\\FormStart.cs",
+              "RelativeToolTip": "Paobom\\FormStart.cs",
+              "ViewState": "AQIAAAYAAAAAAAAAAAD4vx4AAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-04T23:27:08.024Z",
+              "EditorCaption": ""
             }
           ]
         }

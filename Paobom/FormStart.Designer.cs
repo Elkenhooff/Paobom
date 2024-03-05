@@ -44,10 +44,11 @@
             // menuStrip1
             // 
             menuStrip1.BackColor = Color.White;
+            menuStrip1.ImageScalingSize = new Size(20, 20);
             menuStrip1.Items.AddRange(new ToolStripItem[] { sistemaToolStripMenuItem });
             menuStrip1.Location = new Point(0, 0);
             menuStrip1.Name = "menuStrip1";
-            menuStrip1.Size = new Size(914, 30);
+            menuStrip1.Size = new Size(914, 35);
             menuStrip1.TabIndex = 0;
             menuStrip1.Text = "menuStrip1";
             // 
@@ -56,38 +57,39 @@
             sistemaToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { estoqueToolStripMenuItem, funcionárioToolStripMenuItem, menuPrincipalToolStripMenuItem, produtoToolStripMenuItem });
             sistemaToolStripMenuItem.Font = new Font("Arial", 14F);
             sistemaToolStripMenuItem.Name = "sistemaToolStripMenuItem";
-            sistemaToolStripMenuItem.Size = new Size(91, 26);
+            sistemaToolStripMenuItem.Size = new Size(112, 31);
             sistemaToolStripMenuItem.Text = "Sistema";
             // 
             // estoqueToolStripMenuItem
             // 
             estoqueToolStripMenuItem.Name = "estoqueToolStripMenuItem";
-            estoqueToolStripMenuItem.Size = new Size(203, 26);
+            estoqueToolStripMenuItem.Size = new Size(258, 32);
             estoqueToolStripMenuItem.Text = "Estoque";
             // 
             // funcionárioToolStripMenuItem
             // 
             funcionárioToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { cadastroDeFuncionáriosToolStripMenuItem, listaFuncionáriosToolStripMenuItem });
             funcionárioToolStripMenuItem.Name = "funcionárioToolStripMenuItem";
-            funcionárioToolStripMenuItem.Size = new Size(203, 26);
+            funcionárioToolStripMenuItem.Size = new Size(258, 32);
             funcionárioToolStripMenuItem.Text = "Funcionário";
             // 
             // cadastroDeFuncionáriosToolStripMenuItem
             // 
             cadastroDeFuncionáriosToolStripMenuItem.Name = "cadastroDeFuncionáriosToolStripMenuItem";
-            cadastroDeFuncionáriosToolStripMenuItem.Size = new Size(297, 26);
+            cadastroDeFuncionáriosToolStripMenuItem.Size = new Size(374, 32);
             cadastroDeFuncionáriosToolStripMenuItem.Text = "Cadastro de Funcionários";
+            cadastroDeFuncionáriosToolStripMenuItem.Click += cadastroDeFuncionáriosToolStripMenuItem_Click;
             // 
             // listaFuncionáriosToolStripMenuItem
             // 
             listaFuncionáriosToolStripMenuItem.Name = "listaFuncionáriosToolStripMenuItem";
-            listaFuncionáriosToolStripMenuItem.Size = new Size(297, 26);
+            listaFuncionáriosToolStripMenuItem.Size = new Size(374, 32);
             listaFuncionáriosToolStripMenuItem.Text = "Lista Funcionários";
             // 
             // menuPrincipalToolStripMenuItem
             // 
             menuPrincipalToolStripMenuItem.Name = "menuPrincipalToolStripMenuItem";
-            menuPrincipalToolStripMenuItem.Size = new Size(203, 26);
+            menuPrincipalToolStripMenuItem.Size = new Size(258, 32);
             menuPrincipalToolStripMenuItem.Text = "Menu Principal";
             menuPrincipalToolStripMenuItem.Click += menuPrincipalToolStripMenuItem_Click;
             // 
@@ -95,19 +97,19 @@
             // 
             produtoToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { cadastroDeProdutosToolStripMenuItem });
             produtoToolStripMenuItem.Name = "produtoToolStripMenuItem";
-            produtoToolStripMenuItem.Size = new Size(203, 26);
+            produtoToolStripMenuItem.Size = new Size(258, 32);
             produtoToolStripMenuItem.Text = "Produto";
             // 
             // cadastroDeProdutosToolStripMenuItem
             // 
             cadastroDeProdutosToolStripMenuItem.Name = "cadastroDeProdutosToolStripMenuItem";
-            cadastroDeProdutosToolStripMenuItem.Size = new Size(266, 26);
+            cadastroDeProdutosToolStripMenuItem.Size = new Size(333, 32);
             cadastroDeProdutosToolStripMenuItem.Text = "Cadastro de Produtos";
             cadastroDeProdutosToolStripMenuItem.Click += cadastroDeProdutosToolStripMenuItem_Click;
             // 
             // FormPaoBom
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(10F, 24F);
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             BackgroundImageLayout = ImageLayout.Stretch;

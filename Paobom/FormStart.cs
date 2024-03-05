@@ -20,5 +20,11 @@ namespace Paobom
             cadastraProdutos.ShowDialog();
 
         }
+
+        private void cadastroDeFuncionáriosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormCadastraFuncionarios cadastraFuncionarios = new FormCadastraFuncionarios();
+            cadastraFuncionarios.ShowDialog();
+        }
     }
 }
