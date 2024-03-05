@@ -51,5 +51,7 @@ namespace Paobom
                 return $@"Data Source = (LocalDB)\MSSQLLocalDB; AttachDbFilename = {caminhoBanco}; Integrated Security = True; Connect Timeout = 30"; // Utilizado para se conectar ao banco
             }
         }
+
+
     }
 }
