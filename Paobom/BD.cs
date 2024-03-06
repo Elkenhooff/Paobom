@@ -19,13 +19,13 @@ namespace Paobom
                 caminhoDownloads, caminhoSource, caminhoDesktop // Armazena as pastas em um array para procurar pelo arquivo futuramente
             ];
 
-            foreach (string pastaEncontrada in pastas)
+            foreach (string pastaEncontrada in pastas) // foreach = Em cada 'pastaEncontrada' em 'pastas' significa que o código passará por cada pasta encontrada
             {
                 try
                 {
-                    string[] arquivos = Directory.GetFiles(pastaEncontrada, nomeArquivo, SearchOption.AllDirectories); // Procura o arquivo nas pastas especificadas e subpastas
+                    string[] arquivos = Directory.GetFiles(pastaEncontrada, nomeArquivo, SearchOption.AllDirectories) ; // Procura o arquivo nas pastas especificadas e subpastas
 
-                    if (arquivos.Length > 0)
+                    if (arquivos.Length > 0) // Se encontrar o arquivo especifico
                     {
 
                         caminhoBanco = arquivos[0]; // Armazena o caminho do banco
