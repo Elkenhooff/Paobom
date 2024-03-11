@@ -26,5 +26,11 @@ namespace Paobom
             FormCadastraFuncionarios cadastraFuncionarios = new FormCadastraFuncionarios();
             cadastraFuncionarios.ShowDialog();
         }
+
+        private void listaFuncionáriosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormListaFuncionarios listaFuncionarios = new FormListaFuncionarios();
+            listaFuncionarios.ShowDialog();
+        }
     }
 }

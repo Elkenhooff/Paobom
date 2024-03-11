@@ -120,7 +120,7 @@
             // 
             // btnInserir
             // 
-            btnInserir.Location = new Point(441, 373);
+            btnInserir.Location = new Point(6, 363);
             btnInserir.Name = "btnInserir";
             btnInserir.Size = new Size(345, 78);
             btnInserir.TabIndex = 3;

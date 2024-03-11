@@ -47,9 +47,11 @@ namespace Paobom
 
                 string sql = $"INSERT INTO funcionarios(func_codigo, func_nome, func_dtnasc, func_endereco, func_telefone, func_telefoneemergencia, func_cargo, func_salario, func_horario, func_dtadmissao, func_beneficios, func_supervisor, func_status) VALUES (@codigo, @nome, @dtnasc, @endereco, @telefone, @telefoneemerg, @cargo, @salario, @horario, @dtadmissao, @beneficios, @supervisor, @status);";
                 SqlCommand comando = new SqlCommand(sql, conexao);
+
                 // 
                 // Lembrete para resolver o parametro do supervisor e beneficios
                 //
+
                 comando.Parameters.Add("@codigo", SqlDbType.Int).Value = Convert.ToInt32(tbCodigo.Text);
                 comando.Parameters.Add("@nome", SqlDbType.VarChar).Value = tBNome.Text;
                 comando.Parameters.Add("@dtnasc", SqlDbType.Date).Value = Convert.ToDateTime(dTPNasc.Text);
@@ -76,6 +78,7 @@ namespace Paobom
 
 
                 conexao.Close();
+
             }
 
             catch (Exception a)

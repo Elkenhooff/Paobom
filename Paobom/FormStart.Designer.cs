@@ -85,6 +85,7 @@
             listaFuncionáriosToolStripMenuItem.Name = "listaFuncionáriosToolStripMenuItem";
             listaFuncionáriosToolStripMenuItem.Size = new Size(297, 26);
             listaFuncionáriosToolStripMenuItem.Text = "Lista Funcionários";
+            listaFuncionáriosToolStripMenuItem.Click += listaFuncionáriosToolStripMenuItem_Click;
             // 
             // menuPrincipalToolStripMenuItem
             // 
