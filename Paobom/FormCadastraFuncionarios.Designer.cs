@@ -37,9 +37,9 @@
             cbSupervisor = new ComboBox();
             cBCargo = new ComboBox();
             gBBeneficios = new GroupBox();
-            checkBox3 = new CheckBox();
-            checkBox2 = new CheckBox();
-            checkBox1 = new CheckBox();
+            cBAuxilio = new CheckBox();
+            cBVale = new CheckBox();
+            cBPlano = new CheckBox();
             cBHorario = new ComboBox();
             tBSetor = new TextBox();
             mTBSalario = new MaskedTextBox();
@@ -150,7 +150,6 @@
             // 
             cbSupervisor.DropDownStyle = ComboBoxStyle.DropDownList;
             cbSupervisor.FormattingEnabled = true;
-            cbSupervisor.Items.AddRange(new object[] { "Manhã", "Tarde", "Noite", "Madrugada" });
             cbSupervisor.Location = new Point(842, 248);
             cbSupervisor.Name = "cbSupervisor";
             cbSupervisor.Size = new Size(200, 30);
@@ -168,9 +167,9 @@
             // 
             // gBBeneficios
             // 
-            gBBeneficios.Controls.Add(checkBox3);
-            gBBeneficios.Controls.Add(checkBox2);
-            gBBeneficios.Controls.Add(checkBox1);
+            gBBeneficios.Controls.Add(cBAuxilio);
+            gBBeneficios.Controls.Add(cBVale);
+            gBBeneficios.Controls.Add(cBPlano);
             gBBeneficios.Location = new Point(842, 109);
             gBBeneficios.Name = "gBBeneficios";
             gBBeneficios.Size = new Size(200, 111);
@@ -178,35 +177,35 @@
             gBBeneficios.TabStop = false;
             gBBeneficios.Text = "Beneficios";
             // 
-            // checkBox3
+            // cBAuxilio
             // 
-            checkBox3.AutoSize = true;
-            checkBox3.Location = new Point(6, 82);
-            checkBox3.Name = "checkBox3";
-            checkBox3.Size = new Size(183, 26);
-            checkBox3.TabIndex = 2;
-            checkBox3.Text = "Auxílio-Transporte";
-            checkBox3.UseVisualStyleBackColor = true;
+            cBAuxilio.AutoSize = true;
+            cBAuxilio.Location = new Point(6, 82);
+            cBAuxilio.Name = "cBAuxilio";
+            cBAuxilio.Size = new Size(183, 26);
+            cBAuxilio.TabIndex = 2;
+            cBAuxilio.Text = "Auxílio-Transporte";
+            cBAuxilio.UseVisualStyleBackColor = true;
             // 
-            // checkBox2
+            // cBVale
             // 
-            checkBox2.AutoSize = true;
-            checkBox2.Location = new Point(6, 53);
-            checkBox2.Name = "checkBox2";
-            checkBox2.Size = new Size(176, 26);
-            checkBox2.TabIndex = 1;
-            checkBox2.Text = "Vale-Alimentação";
-            checkBox2.UseVisualStyleBackColor = true;
+            cBVale.AutoSize = true;
+            cBVale.Location = new Point(6, 53);
+            cBVale.Name = "cBVale";
+            cBVale.Size = new Size(176, 26);
+            cBVale.TabIndex = 1;
+            cBVale.Text = "Vale-Alimentação";
+            cBVale.UseVisualStyleBackColor = true;
             // 
-            // checkBox1
+            // cBPlano
             // 
-            checkBox1.AutoSize = true;
-            checkBox1.Location = new Point(6, 25);
-            checkBox1.Name = "checkBox1";
-            checkBox1.Size = new Size(164, 26);
-            checkBox1.TabIndex = 0;
-            checkBox1.Text = "Plano de Saúde";
-            checkBox1.UseVisualStyleBackColor = true;
+            cBPlano.AutoSize = true;
+            cBPlano.Location = new Point(6, 25);
+            cBPlano.Name = "cBPlano";
+            cBPlano.Size = new Size(164, 26);
+            cBPlano.TabIndex = 0;
+            cBPlano.Text = "Plano de Saúde";
+            cBPlano.UseVisualStyleBackColor = true;
             // 
             // cBHorario
             // 
@@ -443,9 +442,9 @@
         private MaskedTextBox mTBTelefone;
         private MaskedTextBox mTBTelefoneEmerg;
         private GroupBox gBBeneficios;
-        private CheckBox checkBox3;
-        private CheckBox checkBox2;
-        private CheckBox checkBox1;
+        private CheckBox cBAuxilio;
+        private CheckBox cBVale;
+        private CheckBox cBPlano;
         private ComboBox cBHorario;
         private TextBox tBSetor;
         private MaskedTextBox mTBSalario;

@@ -14,9 +14,23 @@ namespace Paobom
 {
     public partial class FormCadastraFuncionarios : Form
     {
+        string plano = "", auxilio = "", vale = "";
         public FormCadastraFuncionarios()
         {
             InitializeComponent();
+            SqlConnection conexao = new SqlConnection(BD.StringConexao);
+            conexao.Open();
+
+            string sql = "SELECT func_nome FROM funcionarios WHERE func_cargo = 'Gerente';";
+            SqlCommand comando = new SqlCommand(sql, conexao);
+            SqlDataReader leitor = comando.ExecuteReader();
+
+            while (leitor.Read())
+            {
+                string cargos = leitor["func_nome"].ToString();
+                cbSupervisor.Items.Add(cargos);
+            }
+            conexao.Close();
         }
 
         private void modificarTamanho()
@@ -46,10 +60,16 @@ namespace Paobom
                 comando.Parameters.Add("@salario", SqlDbType.Decimal).Value = Convert.ToDecimal(mTBSalario.Text.Substring(3));
                 comando.Parameters.Add("@horario", SqlDbType.VarChar).Value = cBHorario.Text;
                 comando.Parameters.Add("@dtadmissao", SqlDbType.Date).Value = Convert.ToDateTime(dTPAdmissao.Text);
-                comando.Parameters.Add("@beneficios", SqlDbType.VarChar).Value = gBBeneficios.Text;
+
+                plano = cBPlano.Checked ? cBPlano.Text : string.Empty;
+                vale = cBVale.Checked ? cBVale.Text : string.Empty;
+                auxilio = cBAuxilio.Checked ? cBAuxilio.Text : string.Empty;
+
+                // MessageBox.Show($"{plano} {vale} {auxilio}");
+
+                comando.Parameters.Add("@beneficios", SqlDbType.VarChar).Value = $"{plano} {vale} {auxilio}";
                 comando.Parameters.Add("@supervisor", SqlDbType.VarChar).Value = cbSupervisor.Text;
                 comando.Parameters.Add("@status", SqlDbType.VarChar).Value = cBStatus.Text;
-
                 comando.ExecuteNonQuery();
 
                 MessageBox.Show("Funcionário inserido com sucesso", "Cadastrado com Sucesso!", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -57,6 +77,7 @@ namespace Paobom
 
                 conexao.Close();
             }
+
             catch (Exception a)
             {
                 MessageBox.Show(a.Message, "Erro ao inserir no banco de dados", MessageBoxButtons.OK, MessageBoxIcon.Error);
