@@ -46,7 +46,7 @@ namespace Paobom
                 comando.Parameters.Add("@codigo", SqlDbType.Int).Value = Convert.ToInt32(txtBarra.Text);
                 comando.Parameters.Add("@nome", SqlDbType.VarChar).Value = txtNome.Text;
                 comando.Parameters.Add("@medida", SqlDbType.VarChar).Value = cBoxMedida.Text;
-                comando.Parameters.Add("@valor", SqlDbType.Decimal).Value = Convert.ToDecimal(mTBoxValor.Text.Substring(3));
+                comando.Parameters.Add("@valor", SqlDbType.VarChar).Value = mTBoxValor.Text;
                 comando.Parameters.Add("@fabricacao", SqlDbType.Date).Value = Convert.ToDateTime(dTPFabricacao.Text);
                 comando.Parameters.Add("@validade", SqlDbType.Date).Value = Convert.ToDateTime(dTPValidade.Text);
                 comando.Parameters.Add("@categoria", SqlDbType.VarChar).Value = cBCategoria.Text;

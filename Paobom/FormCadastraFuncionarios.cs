@@ -18,6 +18,11 @@ namespace Paobom
         public FormCadastraFuncionarios()
         {
             InitializeComponent();
+            comboBoxSupervisor();
+        }
+
+        private void comboBoxSupervisor()
+        {
             SqlConnection conexao = new SqlConnection(BD.StringConexao);
             conexao.Open();
 
@@ -31,11 +36,6 @@ namespace Paobom
                 cbSupervisor.Items.Add(cargos);
             }
             conexao.Close();
-        }
-
-        private void modificarTamanho()
-        {
-            
         }
 
         private void btnInserir_Click(object sender, EventArgs e)
@@ -59,7 +59,7 @@ namespace Paobom
                 comando.Parameters.Add("@telefone", SqlDbType.VarChar).Value = mTBTelefone.Text;
                 comando.Parameters.Add("@telefoneemerg", SqlDbType.VarChar).Value = mTBTelefoneEmerg.Text;
                 comando.Parameters.Add("@cargo", SqlDbType.VarChar).Value = cBCargo.Text;
-                comando.Parameters.Add("@salario", SqlDbType.Decimal).Value = Convert.ToDecimal(mTBSalario.Text.Substring(3));
+                comando.Parameters.Add("@salario", SqlDbType.VarChar).Value = (mTBSalario.Text);
                 comando.Parameters.Add("@horario", SqlDbType.VarChar).Value = cBHorario.Text;
                 comando.Parameters.Add("@dtadmissao", SqlDbType.Date).Value = Convert.ToDateTime(dTPAdmissao.Text);
 
@@ -69,7 +69,7 @@ namespace Paobom
 
                 // MessageBox.Show($"{plano} {vale} {auxilio}");
 
-                comando.Parameters.Add("@beneficios", SqlDbType.VarChar).Value = $"{plano} {vale} {auxilio}";
+                comando.Parameters.Add("@beneficios", SqlDbType.VarChar).Value = $"{plano} \n{vale} \n{auxilio}";
                 comando.Parameters.Add("@supervisor", SqlDbType.VarChar).Value = cbSupervisor.Text;
                 comando.Parameters.Add("@status", SqlDbType.VarChar).Value = cBStatus.Text;
                 comando.ExecuteNonQuery();

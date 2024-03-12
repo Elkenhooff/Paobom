@@ -38,6 +38,7 @@
             menuPrincipalToolStripMenuItem = new ToolStripMenuItem();
             produtoToolStripMenuItem = new ToolStripMenuItem();
             cadastroDeProdutosToolStripMenuItem = new ToolStripMenuItem();
+            listaProdutoToolStripMenuItem = new ToolStripMenuItem();
             menuStrip1.SuspendLayout();
             SuspendLayout();
             // 
@@ -96,7 +97,7 @@
             // 
             // produtoToolStripMenuItem
             // 
-            produtoToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { cadastroDeProdutosToolStripMenuItem });
+            produtoToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { cadastroDeProdutosToolStripMenuItem, listaProdutoToolStripMenuItem });
             produtoToolStripMenuItem.Name = "produtoToolStripMenuItem";
             produtoToolStripMenuItem.Size = new Size(203, 26);
             produtoToolStripMenuItem.Text = "Produto";
@@ -107,6 +108,13 @@
             cadastroDeProdutosToolStripMenuItem.Size = new Size(266, 26);
             cadastroDeProdutosToolStripMenuItem.Text = "Cadastro de Produtos";
             cadastroDeProdutosToolStripMenuItem.Click += cadastroDeProdutosToolStripMenuItem_Click;
+            // 
+            // listaProdutoToolStripMenuItem
+            // 
+            listaProdutoToolStripMenuItem.Name = "listaProdutoToolStripMenuItem";
+            listaProdutoToolStripMenuItem.Size = new Size(266, 26);
+            listaProdutoToolStripMenuItem.Text = "Lista Produtos";
+            listaProdutoToolStripMenuItem.Click += listaProdutoToolStripMenuItem_Click;
             // 
             // FormPaoBom
             // 
@@ -141,5 +149,6 @@
         private ToolStripMenuItem produtoToolStripMenuItem;
         private ToolStripMenuItem cadastroDeProdutosToolStripMenuItem;
         private ToolStripMenuItem menuPrincipalToolStripMenuItem;
+        private ToolStripMenuItem listaProdutoToolStripMenuItem;
     }
 }

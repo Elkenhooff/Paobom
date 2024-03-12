@@ -227,7 +227,7 @@
             // mTBSalario
             // 
             mTBSalario.Location = new Point(457, 191);
-            mTBSalario.Mask = "$ 00000.00";
+            mTBSalario.Mask = "$ 00,000.00";
             mTBSalario.Name = "mTBSalario";
             mTBSalario.Size = new Size(279, 29);
             mTBSalario.TabIndex = 21;

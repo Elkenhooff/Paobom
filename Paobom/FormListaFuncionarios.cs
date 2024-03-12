@@ -17,7 +17,7 @@ namespace Paobom
         {
             InitializeComponent();
             atualizarGrid();
-
+            //MessageBox.Show(dGVFuncionarios.ColumnCount.ToString());
         }
 
         public DataTable listaFuncionarios()
@@ -25,7 +25,7 @@ namespace Paobom
             SqlConnection conexao = new SqlConnection(BD.StringConexao);
             conexao.Open();
 
-            string sql = "SELECT * FROM funcionarios;";
+            string sql = "SELECT * FROM funcionarios ORDER BY func_nome;";
 
             SqlDataAdapter sqlDataAdapter = new SqlDataAdapter(sql, conexao);
             DataTable dt = new DataTable();
@@ -52,25 +52,36 @@ namespace Paobom
             dGVFuncionarios.Columns[11].HeaderText = "Supervisor";
             dGVFuncionarios.Columns[12].HeaderText = "Status";
 
+
+
             dGVFuncionarios.Columns[0].Width = 125;
             dGVFuncionarios.Columns[1].Width = 320;
             dGVFuncionarios.Columns[2].Width = 115;
             dGVFuncionarios.Columns[3].Width = 400;
             dGVFuncionarios.Columns[4].Width = 200;
             dGVFuncionarios.Columns[5].Width = 200;
-            dGVFuncionarios.Columns[6].Width = 115;
-            dGVFuncionarios.Columns[7].Width = 200;
-            dGVFuncionarios.Columns[8].Width = 200;
+            dGVFuncionarios.Columns[6].Width = 215;
+            dGVFuncionarios.Columns[7].Width = 135;
+            dGVFuncionarios.Columns[8].Width = 80;
             dGVFuncionarios.Columns[9].Width = 115;
-            dGVFuncionarios.Columns[10].Width = 200;
-            dGVFuncionarios.Columns[11].Width = 200;
+            dGVFuncionarios.Columns[10].Width = 500;
+            dGVFuncionarios.Columns[11].Width = 150;
             dGVFuncionarios.Columns[12].Width = 80;
-
 
             dGVFuncionarios.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dGVFuncionarios.AllowUserToAddRows = false;
             dGVFuncionarios.AllowUserToDeleteRows = false;
             dGVFuncionarios.ReadOnly = true;
+            dGVFuncionarios.AllowUserToResizeColumns = false;
+            dGVFuncionarios.AllowUserToOrderColumns = false;
+            dGVFuncionarios.AllowUserToResizeColumns = true;
+            dGVFuncionarios.AllowUserToResizeRows = false;
+            for (int i = 0; i < dGVFuncionarios.ColumnCount; i++)
+            {
+                dGVFuncionarios.Columns[i].SortMode = DataGridViewColumnSortMode.NotSortable;
+            }
+            dGVFuncionarios.RowHeadersWidth = 25;
         }
     }
 }
+    

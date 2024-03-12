@@ -32,5 +32,11 @@ namespace Paobom
             FormListaFuncionarios listaFuncionarios = new FormListaFuncionarios();
             listaFuncionarios.ShowDialog();
         }
+
+        private void listaProdutoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormListaProdutos listaProdutos = new FormListaProdutos();
+            listaProdutos.ShowDialog();
+        }
     }
 }
