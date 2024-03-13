@@ -16,14 +16,16 @@ namespace Paobom
 {
     public partial class FormMenuPrincipal : Form
     {
-        private KeyboardHookManager keyboardHookManager;
+        private int qrcode = -1;
+
         public FormMenuPrincipal()
         {
             InitializeComponent();
             KeyboardHookManager keyboardHookManager = new KeyboardHookManager();
             keyboardHookManager.Start();
-            keyboardHookManager.RegisterHotkey((int)Keys.A, impedirFechamento);
+            keyboardHookManager.RegisterHotkey(NonInvasiveKeyboardHookLibrary.ModifierKeys.Control, (int)Keys.F8, fecharAplicacao);
 
+            
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -40,18 +42,35 @@ namespace Paobom
                 MessageBox.Show(abc.Message, "Teste", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 throw;
             }
+
+            try
+            {
+                qrcode = Convert.ToInt32(tBCódigo.Text);
+
+                buscarValor();
+                inserirProduto();
+            }
+            catch (Exception a)
+            {
+                MessageBox.Show(a.Message, "Teste", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                throw;
+            }
         }
 
-        public void impedirFechamento()
+        public void fecharAplicacao()
         {
-            this.Invoke((MethodInvoker)delegate
+            this.FormClosing -= FormMenuPrincipal_FormClosing;
+            if (this.InvokeRequired)
+            {
+                this.Invoke((MethodInvoker)delegate
+                {
+                    this.Close();
+                });
+            }
+            else
             {
                 this.Close();
-            });
-            FormMenuPrincipal formPrincipal = new FormMenuPrincipal();
-            formPrincipal.ShowDialog();
-            MessageBox.Show("Você não pode fechar a aplicação sem a permissão", "Aviso!!!", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
+            }
         }
 
         private void FormMenuPrincipal_FormClosing(object sender, FormClosingEventArgs e)
@@ -59,6 +78,25 @@ namespace Paobom
             var impedirFechamento = MessageBox.Show("Você não pode fechar a aplicação sem a permissão", "Aviso!!!", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
             e.Cancel = (impedirFechamento == DialogResult.OK);
+        }
+
+
+        public void inserirProduto()
+        {
+            dGVVendas.DataSource = buscarValor();
+        }
+
+        public DataTable buscarValor()
+        {
+            SqlConnection conexao = new SqlConnection(BD.StringConexao);
+            conexao.Open();
+
+            string sql = $"SELECT pro_codigo, pro_nome, pro_valor FROM produtos WHERE pro_codigo = {qrcode};";
+            DataTable dt = new DataTable();
+            SqlDataAdapter adapter = new SqlDataAdapter(sql, conexao);
+            adapter.Fill(dt);
+
+            return dt;
         }
     }
 }

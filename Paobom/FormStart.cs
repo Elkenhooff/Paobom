@@ -38,5 +38,10 @@ namespace Paobom
             FormListaProdutos listaProdutos = new FormListaProdutos();
             listaProdutos.ShowDialog();
         }
+
+        public void fecharAplicacao()
+        {
+            this.Close();
+        }
     }
 }
