@@ -56,6 +56,7 @@
             RightToLeft = RightToLeft.No;
             Text = "FormMenuPrincipal";
             WindowState = FormWindowState.Maximized;
+            FormClosing += FormMenuPrincipal_FormClosing;
             ResumeLayout(false);
         }
 

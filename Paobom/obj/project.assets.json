@@ -38,6 +38,15 @@
           }
         }
       },
+      "NonInvasiveKeyboardHookLibrary.Core/2.1.0": {
+        "type": "package",
+        "compile": {
+          "lib/netcoreapp3.1/NonInvasiveKeyboardHookLibrary.Core.dll": {}
+        },
+        "runtime": {
+          "lib/netcoreapp3.1/NonInvasiveKeyboardHookLibrary.Core.dll": {}
+        }
+      },
       "runtime.native.System.Data.SqlClient.sni/4.7.0": {
         "type": "package",
         "dependencies": {
@@ -212,6 +221,18 @@
         "runtimes/win/lib/netstandard2.0/Microsoft.Win32.Registry.xml",
         "useSharedDesignerContext.txt",
         "version.txt"
+      ]
+    },
+    "NonInvasiveKeyboardHookLibrary.Core/2.1.0": {
+      "sha512": "RI9Cb8/38WO0i8eg03jEMO0rX47+Ol+MyS8dBRhkaGvUavfW2DrX1TFTfHyHEL2ZrraG00J2TwlKjOsrbTOhKw==",
+      "type": "package",
+      "path": "noninvasivekeyboardhooklibrary.core/2.1.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/netcoreapp3.1/NonInvasiveKeyboardHookLibrary.Core.dll",
+        "noninvasivekeyboardhooklibrary.core.2.1.0.nupkg.sha512",
+        "noninvasivekeyboardhooklibrary.core.nuspec"
       ]
     },
     "runtime.native.System.Data.SqlClient.sni/4.7.0": {
@@ -466,6 +487,7 @@
   },
   "projectFileDependencyGroups": {
     "net8.0-windows7.0": [
+      "NonInvasiveKeyboardHookLibrary.Core >= 2.1.0",
       "System.Data.SqlClient >= 4.8.6"
     ]
   },
@@ -514,6 +536,10 @@
       "net8.0-windows7.0": {
         "targetAlias": "net8.0-windows",
         "dependencies": {
+          "NonInvasiveKeyboardHookLibrary.Core": {
+            "target": "Package",
+            "version": "[2.1.0, )"
+          },
           "System.Data.SqlClient": {
             "target": "Package",
             "version": "[4.8.6, )"

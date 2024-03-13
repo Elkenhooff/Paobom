@@ -28,12 +28,40 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Text = "FormListaProdutos";
+            dGVProdutos = new DataGridView();
+            ((System.ComponentModel.ISupportInitialize)dGVProdutos).BeginInit();
+            SuspendLayout();
+            // 
+            // dGVProdutos
+            // 
+            dGVProdutos.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            dGVProdutos.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dGVProdutos.Location = new Point(20, 18);
+            dGVProdutos.Margin = new Padding(5, 4, 5, 4);
+            dGVProdutos.Name = "dGVProdutos";
+            dGVProdutos.Size = new Size(1219, 625);
+            dGVProdutos.TabIndex = 0;
+            // 
+            // FormListaProdutos
+            // 
+            AutoScaleDimensions = new SizeF(11F, 22F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(1256, 660);
+            Controls.Add(dGVProdutos);
+            Font = new Font("Arial", 14F);
+            FormBorderStyle = FormBorderStyle.Fixed3D;
+            Margin = new Padding(5, 4, 5, 4);
+            MaximizeBox = false;
+            MinimizeBox = false;
+            Name = "FormListaProdutos";
+            Text = "FormListaProdutos";
+            WindowState = FormWindowState.Maximized;
+            ((System.ComponentModel.ISupportInitialize)dGVProdutos).EndInit();
+            ResumeLayout(false);
         }
 
         #endregion
+
+        private DataGridView dGVProdutos;
     }
 }
