@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Paobom")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+a614e17ebfe07c96e834162269c8068b52d9a3c3")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+0c9b2dbcc288013f43df159139c704f65dd60617")]
 [assembly: System.Reflection.AssemblyProductAttribute("Paobom")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Paobom")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

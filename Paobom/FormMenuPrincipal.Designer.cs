@@ -31,14 +31,16 @@
             button1 = new Button();
             dGVVendas = new DataGridView();
             tBCódigo = new TextBox();
+            btnRemover = new Button();
             ((System.ComponentModel.ISupportInitialize)dGVVendas).BeginInit();
             SuspendLayout();
             // 
             // button1
             // 
-            button1.Location = new Point(229, 186);
+            button1.Location = new Point(425, 139);
+            button1.Margin = new Padding(4);
             button1.Name = "button1";
-            button1.Size = new Size(117, 29);
+            button1.Size = new Size(143, 35);
             button1.TabIndex = 0;
             button1.Text = "Testar Banco";
             button1.UseVisualStyleBackColor = true;
@@ -46,31 +48,46 @@
             // 
             // dGVVendas
             // 
-            dGVVendas.BackgroundColor = SystemColors.ButtonFace;
+            dGVVendas.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            dGVVendas.BackgroundColor = SystemColors.Control;
             dGVVendas.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dGVVendas.Location = new Point(542, 12);
+            dGVVendas.Location = new Point(597, 13);
+            dGVVendas.Margin = new Padding(4);
             dGVVendas.Name = "dGVVendas";
-            dGVVendas.Size = new Size(886, 391);
+            dGVVendas.Size = new Size(834, 478);
             dGVVendas.TabIndex = 1;
             // 
             // tBCódigo
             // 
-            tBCódigo.Location = new Point(339, 82);
+            tBCódigo.Location = new Point(414, 100);
+            tBCódigo.Margin = new Padding(4);
             tBCódigo.Name = "tBCódigo";
-            tBCódigo.Size = new Size(135, 26);
+            tBCódigo.Size = new Size(164, 29);
             tBCódigo.TabIndex = 2;
+            // 
+            // btnRemover
+            // 
+            btnRemover.Location = new Point(425, 181);
+            btnRemover.Name = "btnRemover";
+            btnRemover.Size = new Size(143, 33);
+            btnRemover.TabIndex = 3;
+            btnRemover.Text = "Remover Produto";
+            btnRemover.UseVisualStyleBackColor = true;
+            btnRemover.Click += btnRemover_Click;
             // 
             // FormMenuPrincipal
             // 
-            AutoScaleDimensions = new SizeF(9F, 18F);
+            AutoScaleDimensions = new SizeF(11F, 22F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1440, 563);
+            BackColor = SystemColors.ActiveBorder;
+            ClientSize = new Size(1444, 688);
+            Controls.Add(btnRemover);
             Controls.Add(tBCódigo);
             Controls.Add(dGVVendas);
             Controls.Add(button1);
-            Font = new Font("Arial", 12F);
+            Font = new Font("Arial", 14F);
             FormBorderStyle = FormBorderStyle.None;
-            Margin = new Padding(4);
+            Margin = new Padding(5);
             MaximizeBox = false;
             MinimizeBox = false;
             Name = "FormMenuPrincipal";
@@ -88,5 +105,6 @@
         private Button button1;
         private DataGridView dGVVendas;
         private TextBox tBCódigo;
+        private Button btnRemover;
     }
 }

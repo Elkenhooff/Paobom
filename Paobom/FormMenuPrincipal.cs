@@ -25,7 +25,7 @@ namespace Paobom
             keyboardHookManager.Start();
             keyboardHookManager.RegisterHotkey(NonInvasiveKeyboardHookLibrary.ModifierKeys.Control, (int)Keys.F8, fecharAplicacao);
 
-            
+            this.FormClosing -= FormMenuPrincipal_FormClosing; // Evitar de ficar apertando CTRL F8 para efetuar os testes na aplicação
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -84,6 +84,31 @@ namespace Paobom
         public void inserirProduto()
         {
             dGVVendas.DataSource = buscarValor();
+
+            dGVVendas.ColumnHeadersVisible = false;
+            dGVVendas.RowHeadersVisible = false;
+
+            dGVVendas.Columns[0].Width = 120;
+            dGVVendas.Columns[1].Width = 600;
+            dGVVendas.Columns[2].Width = 120;
+
+
+
+            dGVVendas.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dGVVendas.AllowUserToAddRows = false;
+            dGVVendas.AllowUserToDeleteRows = false;
+            dGVVendas.AllowUserToResizeColumns = false;
+            dGVVendas.AllowUserToOrderColumns = false;
+            dGVVendas.AllowUserToResizeColumns = false;
+            dGVVendas.AllowUserToResizeRows = false;
+            dGVVendas.ReadOnly = true;
+
+
+            for (int i = 0; i < dGVVendas.ColumnCount; i++)
+            {
+                dGVVendas.Columns[i].SortMode = DataGridViewColumnSortMode.NotSortable;
+
+            }
         }
 
         public DataTable buscarValor()
@@ -97,6 +122,17 @@ namespace Paobom
             adapter.Fill(dt);
 
             return dt;
+        }
+
+        private void btnRemover_Click(object sender, EventArgs e)
+        {
+            if (dGVVendas.SelectedRows.Count > 0)
+            {
+                foreach (DataGridViewRow linhas in  dGVVendas.SelectedRows)
+                {
+                    dGVVendas.Rows.Remove(linhas);
+                }
+            }
         }
     }
 }
