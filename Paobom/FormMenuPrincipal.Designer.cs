@@ -28,10 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             button1 = new Button();
             dGVVendas = new DataGridView();
             tBCódigo = new TextBox();
             btnRemover = new Button();
+            lbTotal = new Label();
+            timer1 = new System.Windows.Forms.Timer(components);
             ((System.ComponentModel.ISupportInitialize)dGVVendas).BeginInit();
             SuspendLayout();
             // 
@@ -75,12 +78,26 @@
             btnRemover.UseVisualStyleBackColor = true;
             btnRemover.Click += btnRemover_Click;
             // 
+            // lbTotal
+            // 
+            lbTotal.AutoSize = true;
+            lbTotal.Location = new Point(749, 543);
+            lbTotal.Name = "lbTotal";
+            lbTotal.Size = new Size(0, 22);
+            lbTotal.TabIndex = 4;
+            // 
+            // timer1
+            // 
+            timer1.Enabled = true;
+            timer1.Tick += timer1_Tick;
+            // 
             // FormMenuPrincipal
             // 
             AutoScaleDimensions = new SizeF(11F, 22F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ActiveBorder;
             ClientSize = new Size(1444, 688);
+            Controls.Add(lbTotal);
             Controls.Add(btnRemover);
             Controls.Add(tBCódigo);
             Controls.Add(dGVVendas);
@@ -106,5 +123,7 @@
         private DataGridView dGVVendas;
         private TextBox tBCódigo;
         private Button btnRemover;
+        private Label lbTotal;
+        private System.Windows.Forms.Timer timer1;
     }
 }

@@ -17,6 +17,7 @@ namespace Paobom
     public partial class FormMenuPrincipal : Form
     {
         private int qrcode = -1;
+        DataTable dtProdutos = new DataTable();
 
         public FormMenuPrincipal()
         {
@@ -35,7 +36,7 @@ namespace Paobom
                 SqlConnection conexao = new SqlConnection(BD.StringConexao);
 
                 conexao.Open();
-                MessageBox.Show(BD.caminhoBanco, "Conexão bem sucedida", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                //MessageBox.Show(BD.caminhoBanco, "Conexão bem sucedida", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             catch (Exception abc)
             {
@@ -83,7 +84,17 @@ namespace Paobom
 
         public void inserirProduto()
         {
-            dGVVendas.DataSource = buscarValor();
+
+            if (dtProdutos.Rows.Count == 0)
+            {
+                dtProdutos = buscarValor();
+            }
+            else
+            {
+                dtProdutos.Merge(buscarValor());
+            }
+
+            dGVVendas.DataSource = dtProdutos;
 
             dGVVendas.ColumnHeadersVisible = false;
             dGVVendas.RowHeadersVisible = false;
@@ -126,12 +137,40 @@ namespace Paobom
 
         private void btnRemover_Click(object sender, EventArgs e)
         {
-            if (dGVVendas.SelectedRows.Count > 0)
+            var resposta = MessageBox.Show("Você realmente deseja remover o produto?", "Aviso", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+            if (resposta  == DialogResult.Yes)
             {
-                foreach (DataGridViewRow linhas in  dGVVendas.SelectedRows)
+                if (dGVVendas.SelectedRows.Count > 0)
                 {
-                    dGVVendas.Rows.Remove(linhas);
+                    foreach (DataGridViewRow linhas in dGVVendas.SelectedRows)
+                    {
+                        dGVVendas.Rows.Remove(linhas);
+                    }
                 }
+            }             
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            decimal total = 0;
+
+            foreach (DataGridViewRow linha in dGVVendas.Rows)
+            {
+                if (linha.Cells[2].Value != null)
+                {
+                    string totalString = linha.Cells[2].Value.ToString();
+                    totalString = totalString.Substring(3);
+
+                    total += Convert.ToDecimal(totalString);
+                }
+            }
+            if (total != 0)
+            {
+                lbTotal.Text = "R$ " + total.ToString("F2");
+            }
+            else
+            {
+                lbTotal.Text = "";
             }
         }
     }
