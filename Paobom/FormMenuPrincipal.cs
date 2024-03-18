@@ -6,10 +6,10 @@ using MercadoPago.Config;
 using MercadoPago.Resource;
 using MercadoPago.Resource.PaymentMethod;
 
-MercadoPagoConfig.AccessToken = "ENV_ACCESS_TOKEN";
+//MercadoPagoConfig.AccessToken = "ENV_ACCESS_TOKEN";
 
-var client = new PaymentMethodClient();
-ResourcesList<PaymentMethod> paymentMethods = await client.ListAsync();
+//var client = new PaymentMethodClient();
+//ResourcesList<PaymentMethod> paymentMethods = await client.ListAsync();
 
 
 
@@ -27,7 +27,7 @@ namespace Paobom
             keyboardHookManager.Start();
             keyboardHookManager.RegisterHotkey(NonInvasiveKeyboardHookLibrary.ModifierKeys.Control, (int)Keys.F8, fecharAplicacao);
 
-            this.FormClosing -= FormMenuPrincipal_FormClosing; // Evitar de ficar apertando CTRL F8 para efetuar os testes na aplicação
+            //this.FormClosing -= FormMenuPrincipal_FormClosing; // Evitar de ficar apertando CTRL F8 para efetuar os testes na aplicação
         }
 
         private void button1_Click(object sender, EventArgs e)

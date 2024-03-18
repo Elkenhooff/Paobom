@@ -89,3 +89,5 @@ C:\Users\pedro.hdsantos4\source\repos\Paobom\Paobom\obj\Debug\net8.0-windows\Pao
 C:\Users\pedro.hdsantos4\source\repos\Paobom\Paobom\bin\Debug\net8.0-windows\NonInvasiveKeyboardHookLibrary.Core.dll
 C:\Users\aluno\source\repos\Paobom\Paobom\bin\Debug\net8.0-windows\NonInvasiveKeyboardHookLibrary.Core.dll
 C:\Users\aluno\source\repos\Paobom\Paobom\obj\Debug\net8.0-windows\Paobom.FormListaProdutos.resources
+C:\Users\aluno\source\repos\Paobom\Paobom\bin\Debug\net8.0-windows\MercadoPago.dll
+C:\Users\aluno\source\repos\Paobom\Paobom\bin\Debug\net8.0-windows\Newtonsoft.Json.dll
