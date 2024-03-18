@@ -35,6 +35,8 @@
             btnRemover = new Button();
             lbTotal = new Label();
             timer1 = new System.Windows.Forms.Timer(components);
+            button2 = new Button();
+            button3 = new Button();
             ((System.ComponentModel.ISupportInitialize)dGVVendas).BeginInit();
             SuspendLayout();
             // 
@@ -70,9 +72,9 @@
             // 
             // btnRemover
             // 
-            btnRemover.Location = new Point(425, 181);
+            btnRemover.Location = new Point(398, 181);
             btnRemover.Name = "btnRemover";
-            btnRemover.Size = new Size(143, 33);
+            btnRemover.Size = new Size(170, 33);
             btnRemover.TabIndex = 3;
             btnRemover.Text = "Remover Produto";
             btnRemover.UseVisualStyleBackColor = true;
@@ -91,12 +93,33 @@
             timer1.Enabled = true;
             timer1.Tick += timer1_Tick;
             // 
+            // button2
+            // 
+            button2.Location = new Point(398, 220);
+            button2.Name = "button2";
+            button2.Size = new Size(170, 33);
+            button2.TabIndex = 5;
+            button2.Text = "Limpar Carrinho";
+            button2.UseVisualStyleBackColor = true;
+            button2.Click += button2_Click;
+            // 
+            // button3
+            // 
+            button3.Location = new Point(398, 259);
+            button3.Name = "button3";
+            button3.Size = new Size(170, 33);
+            button3.TabIndex = 6;
+            button3.Text = "Finalizar Compra";
+            button3.UseVisualStyleBackColor = true;
+            // 
             // FormMenuPrincipal
             // 
             AutoScaleDimensions = new SizeF(11F, 22F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ActiveBorder;
             ClientSize = new Size(1444, 688);
+            Controls.Add(button3);
+            Controls.Add(button2);
             Controls.Add(lbTotal);
             Controls.Add(btnRemover);
             Controls.Add(tBCódigo);
@@ -125,5 +148,7 @@
         private Button btnRemover;
         private Label lbTotal;
         private System.Windows.Forms.Timer timer1;
+        private Button button2;
+        private Button button3;
     }
 }

@@ -1,15 +1,16 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
+﻿using NonInvasiveKeyboardHookLibrary;
 using System.Data;
 using System.Data.SqlClient;
-using System.Data.SqlTypes;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using NonInvasiveKeyboardHookLibrary;
+using MercadoPago.Client.PaymentMethod;
+using MercadoPago.Config;
+using MercadoPago.Resource;
+using MercadoPago.Resource.PaymentMethod;
+
+MercadoPagoConfig.AccessToken = "ENV_ACCESS_TOKEN";
+
+var client = new PaymentMethodClient();
+ResourcesList<PaymentMethod> paymentMethods = await client.ListAsync();
+
 
 
 namespace Paobom
@@ -138,7 +139,7 @@ namespace Paobom
         private void btnRemover_Click(object sender, EventArgs e)
         {
             var resposta = MessageBox.Show("Você realmente deseja remover o produto?", "Aviso", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
-            if (resposta  == DialogResult.Yes)
+            if (resposta == DialogResult.Yes)
             {
                 if (dGVVendas.SelectedRows.Count > 0)
                 {
@@ -147,7 +148,7 @@ namespace Paobom
                         dGVVendas.Rows.Remove(linhas);
                     }
                 }
-            }             
+            }
         }
 
         private void timer1_Tick(object sender, EventArgs e)
@@ -171,6 +172,19 @@ namespace Paobom
             else
             {
                 lbTotal.Text = "";
+            }
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            var resposta = MessageBox.Show("Você deseja limpar o carrinho?", "Aviso", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+            if (resposta == DialogResult.Yes)
+            {
+                dGVVendas.SelectAll();
+                foreach (DataGridViewRow linhas in dGVVendas.SelectedRows)
+                {
+                    dGVVendas.Rows.Remove(linhas);
+                }
             }
         }
     }
