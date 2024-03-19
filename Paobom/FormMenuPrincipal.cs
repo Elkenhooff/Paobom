@@ -17,7 +17,7 @@ namespace Paobom
 {
     public partial class FormMenuPrincipal : Form
     {
-        private int qrcode = -1;
+        private double qrcode = -1;
         DataTable dtProdutos = new DataTable();
 
         public FormMenuPrincipal()
@@ -26,7 +26,9 @@ namespace Paobom
             KeyboardHookManager keyboardHookManager = new KeyboardHookManager();
             keyboardHookManager.Start();
             keyboardHookManager.RegisterHotkey(NonInvasiveKeyboardHookLibrary.ModifierKeys.Control, (int)Keys.F8, fecharAplicacao);
+            keyboardHookManager.RegisterHotkey((int)Keys.Enter, finalizarCompra);
 
+            lbTotal.BackColor = lblTotal.BackColor = Color.FromArgb(0xFF, 0xDE, 0x59);
             //this.FormClosing -= FormMenuPrincipal_FormClosing; // Evitar de ficar apertando CTRL F8 para efetuar os testes na aplicação
         }
 
@@ -34,20 +36,11 @@ namespace Paobom
         {
             try
             {
-                SqlConnection conexao = new SqlConnection(BD.StringConexao);
+                if (tBCódigo.Text != "")
+                {
+                    qrcode = Convert.ToInt32(tBCódigo.Text);
+                }
 
-                conexao.Open();
-                //MessageBox.Show(BD.caminhoBanco, "Conexão bem sucedida", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
-            catch (Exception abc)
-            {
-                MessageBox.Show(abc.Message, "Teste", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                throw;
-            }
-
-            try
-            {
-                qrcode = Convert.ToInt32(tBCódigo.Text);
 
                 buscarValor();
                 inserirProduto();
@@ -101,7 +94,7 @@ namespace Paobom
             dGVVendas.RowHeadersVisible = false;
 
             dGVVendas.Columns[0].Width = 120;
-            dGVVendas.Columns[1].Width = 600;
+            dGVVendas.Columns[1].Width = 587;
             dGVVendas.Columns[2].Width = 120;
 
 
@@ -121,6 +114,8 @@ namespace Paobom
                 dGVVendas.Columns[i].SortMode = DataGridViewColumnSortMode.NotSortable;
 
             }
+
+            qrcode = -1;
         }
 
         public DataTable buscarValor()
@@ -168,10 +163,29 @@ namespace Paobom
             if (total != 0)
             {
                 lbTotal.Text = "R$ " + total.ToString("F2");
+                lblTotal.Text = "Valor Total";
             }
             else
             {
-                lbTotal.Text = "";
+                lblTotal.Text = lbTotal.Text = "";
+            }
+
+            if (tBCódigo.Text.Length == 13)
+            {
+                try
+                {
+                    qrcode = Convert.ToDouble(tBCódigo.Text);
+
+
+                    buscarValor();
+                    inserirProduto();
+                    tBCódigo.Clear();
+                }
+                catch (Exception a)
+                {
+                    MessageBox.Show(a.Message, "Teste", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    throw;
+                }
             }
         }
 
@@ -185,6 +199,18 @@ namespace Paobom
                 {
                     dGVVendas.Rows.Remove(linhas);
                 }
+            }
+        }
+
+        public void finalizarCompra()
+        {
+            if (dGVVendas.Rows.Count > 0)
+            {
+                MessageBox.Show("Compra finalizada");
+            }
+            else
+            {
+                // faz nada :thumbsup
             }
         }
     }

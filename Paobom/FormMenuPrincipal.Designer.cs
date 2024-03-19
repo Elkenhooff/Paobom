@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormMenuPrincipal));
             button1 = new Button();
             dGVVendas = new DataGridView();
             tBCódigo = new TextBox();
@@ -36,16 +37,19 @@
             lbTotal = new Label();
             timer1 = new System.Windows.Forms.Timer(components);
             button2 = new Button();
-            button3 = new Button();
+            pictureBox1 = new PictureBox();
+            lblTotal = new Label();
+            groupBox1 = new GroupBox();
             ((System.ComponentModel.ISupportInitialize)dGVVendas).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
             // button1
             // 
-            button1.Location = new Point(425, 139);
+            button1.Location = new Point(408, 137);
             button1.Margin = new Padding(4);
             button1.Name = "button1";
-            button1.Size = new Size(143, 35);
+            button1.Size = new Size(170, 35);
             button1.TabIndex = 0;
             button1.Text = "Testar Banco";
             button1.UseVisualStyleBackColor = true;
@@ -56,23 +60,23 @@
             dGVVendas.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             dGVVendas.BackgroundColor = SystemColors.Control;
             dGVVendas.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dGVVendas.Location = new Point(597, 13);
+            dGVVendas.Location = new Point(597, 218);
             dGVVendas.Margin = new Padding(4);
             dGVVendas.Name = "dGVVendas";
-            dGVVendas.Size = new Size(834, 478);
+            dGVVendas.Size = new Size(830, 478);
             dGVVendas.TabIndex = 1;
             // 
             // tBCódigo
             // 
-            tBCódigo.Location = new Point(414, 100);
+            tBCódigo.Location = new Point(408, 100);
             tBCódigo.Margin = new Padding(4);
             tBCódigo.Name = "tBCódigo";
-            tBCódigo.Size = new Size(164, 29);
+            tBCódigo.Size = new Size(170, 29);
             tBCódigo.TabIndex = 2;
             // 
             // btnRemover
             // 
-            btnRemover.Location = new Point(398, 181);
+            btnRemover.Location = new Point(408, 179);
             btnRemover.Name = "btnRemover";
             btnRemover.Size = new Size(170, 33);
             btnRemover.TabIndex = 3;
@@ -83,10 +87,13 @@
             // lbTotal
             // 
             lbTotal.AutoSize = true;
-            lbTotal.Location = new Point(749, 543);
+            lbTotal.BackColor = Color.Transparent;
+            lbTotal.Font = new Font("Arial", 46F);
+            lbTotal.Location = new Point(1028, 765);
             lbTotal.Name = "lbTotal";
-            lbTotal.Size = new Size(0, 22);
+            lbTotal.Size = new Size(356, 69);
             lbTotal.TabIndex = 4;
+            lbTotal.Text = "R$ 11111,11";
             // 
             // timer1
             // 
@@ -95,7 +102,7 @@
             // 
             // button2
             // 
-            button2.Location = new Point(398, 220);
+            button2.Location = new Point(408, 218);
             button2.Name = "button2";
             button2.Size = new Size(170, 33);
             button2.TabIndex = 5;
@@ -103,28 +110,52 @@
             button2.UseVisualStyleBackColor = true;
             button2.Click += button2_Click;
             // 
-            // button3
+            // pictureBox1
             // 
-            button3.Location = new Point(398, 259);
-            button3.Name = "button3";
-            button3.Size = new Size(170, 33);
-            button3.TabIndex = 6;
-            button3.Text = "Finalizar Compra";
-            button3.UseVisualStyleBackColor = true;
+            pictureBox1.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            pictureBox1.BackColor = Color.Transparent;
+            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
+            pictureBox1.Location = new Point(597, 710);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(834, 178);
+            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox1.TabIndex = 6;
+            pictureBox1.TabStop = false;
+            // 
+            // lblTotal
+            // 
+            lblTotal.AutoSize = true;
+            lblTotal.BackColor = Color.AliceBlue;
+            lblTotal.Font = new Font("Arial", 46F);
+            lblTotal.Location = new Point(656, 765);
+            lblTotal.Name = "lblTotal";
+            lblTotal.Size = new Size(315, 69);
+            lblTotal.TabIndex = 7;
+            lblTotal.Text = "Valor Total";
+            // 
+            // groupBox1
+            // 
+            groupBox1.Location = new Point(597, 12);
+            groupBox1.Name = "groupBox1";
+            groupBox1.Size = new Size(830, 199);
+            groupBox1.TabIndex = 8;
+            groupBox1.TabStop = false;
             // 
             // FormMenuPrincipal
             // 
             AutoScaleDimensions = new SizeF(11F, 22F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = SystemColors.ActiveBorder;
-            ClientSize = new Size(1444, 688);
-            Controls.Add(button3);
-            Controls.Add(button2);
+            BackColor = SystemColors.ActiveCaption;
+            ClientSize = new Size(1440, 881);
+            Controls.Add(groupBox1);
+            Controls.Add(lblTotal);
             Controls.Add(lbTotal);
+            Controls.Add(button2);
             Controls.Add(btnRemover);
             Controls.Add(tBCódigo);
             Controls.Add(dGVVendas);
             Controls.Add(button1);
+            Controls.Add(pictureBox1);
             Font = new Font("Arial", 14F);
             FormBorderStyle = FormBorderStyle.None;
             Margin = new Padding(5);
@@ -136,6 +167,7 @@
             WindowState = FormWindowState.Maximized;
             FormClosing += FormMenuPrincipal_FormClosing;
             ((System.ComponentModel.ISupportInitialize)dGVVendas).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -149,6 +181,8 @@
         private Label lbTotal;
         private System.Windows.Forms.Timer timer1;
         private Button button2;
-        private Button button3;
+        private PictureBox pictureBox1;
+        private Label lblTotal;
+        private GroupBox groupBox1;
     }
 }
