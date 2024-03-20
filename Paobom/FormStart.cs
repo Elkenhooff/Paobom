@@ -2,16 +2,11 @@ namespace Paobom
 {
     public partial class FormPaoBom : Form
     {
+        private FormMenuPrincipal menuprincipalInstancia;
         public FormPaoBom()
         {
             InitializeComponent();
             BD.ProcurarArquivo("BDPaoBom.mdf");
-        }
-
-        public void menuPrincipalToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            FormMenuPrincipal menuPrincipal = new FormMenuPrincipal();
-            menuPrincipal.ShowDialog();
         }
 
         private void cadastroDeProdutosToolStripMenuItem_Click(object sender, EventArgs e)
@@ -37,6 +32,15 @@ namespace Paobom
         {
             FormListaProdutos listaProdutos = new FormListaProdutos();
             listaProdutos.ShowDialog();
+        }
+
+        private void menuPrincipalToolStripMenuItem_Click_1(object sender, EventArgs e)
+        {
+            if (menuprincipalInstancia == null || menuprincipalInstancia.IsDisposed)
+            {
+                menuprincipalInstancia = new FormMenuPrincipal();
+            }
+            menuprincipalInstancia.Show();
         }
     }
 }

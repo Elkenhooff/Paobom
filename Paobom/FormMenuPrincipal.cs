@@ -1,10 +1,6 @@
 ﻿using NonInvasiveKeyboardHookLibrary;
 using System.Data;
 using System.Data.SqlClient;
-using MercadoPago.Client.PaymentMethod;
-using MercadoPago.Config;
-using MercadoPago.Resource;
-using MercadoPago.Resource.PaymentMethod;
 
 //MercadoPagoConfig.AccessToken = "ENV_ACCESS_TOKEN";
 
@@ -26,8 +22,9 @@ namespace Paobom
             KeyboardHookManager keyboardHookManager = new KeyboardHookManager();
             keyboardHookManager.Start();
             keyboardHookManager.RegisterHotkey(NonInvasiveKeyboardHookLibrary.ModifierKeys.Control, (int)Keys.F8, fecharAplicacao);
-            keyboardHookManager.RegisterHotkey((int)Keys.Enter, finalizarCompra);
-
+            keyboardHookManager.RegisterHotkey(NonInvasiveKeyboardHookLibrary.ModifierKeys.Control, (int)Keys.Enter, finalizarCompra);
+            keyboardHookManager.RegisterHotkey(NonInvasiveKeyboardHookLibrary.ModifierKeys.Control, (int)Keys.L, limparCarrinho);
+            keyboardHookManager.RegisterHotkey(NonInvasiveKeyboardHookLibrary.ModifierKeys.Control, (int)Keys.R, removerProduto);
             lbTotal.BackColor = lblTotal.BackColor = Color.FromArgb(0xFF, 0xDE, 0x59);
             //this.FormClosing -= FormMenuPrincipal_FormClosing; // Evitar de ficar apertando CTRL F8 para efetuar os testes na aplicação
         }
@@ -52,7 +49,7 @@ namespace Paobom
             }
         }
 
-        public void fecharAplicacao()
+        private void fecharAplicacao()
         {
             this.FormClosing -= FormMenuPrincipal_FormClosing;
             if (this.InvokeRequired)
@@ -128,22 +125,37 @@ namespace Paobom
             SqlDataAdapter adapter = new SqlDataAdapter(sql, conexao);
             adapter.Fill(dt);
 
+            conexao.Close();
             return dt;
         }
 
-        private void btnRemover_Click(object sender, EventArgs e)
+        private void removerProduto()
         {
-            var resposta = MessageBox.Show("Você realmente deseja remover o produto?", "Aviso", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
-            if (resposta == DialogResult.Yes)
+            if (dGVVendas.SelectedRows.Count > 0)
             {
-                if (dGVVendas.SelectedRows.Count > 0)
+                var resposta = MessageBox.Show("Você realmente deseja remover o produto?", "Aviso", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                if (resposta == DialogResult.Yes)
                 {
+
                     foreach (DataGridViewRow linhas in dGVVendas.SelectedRows)
                     {
                         dGVVendas.Rows.Remove(linhas);
                     }
+
+                    if (dGVVendas.InvokeRequired)
+                    {
+                        dGVVendas.Invoke((MethodInvoker)delegate
+                        {
+                            dGVVendas.Refresh();
+                        });
+                    }
+                    else
+                    {
+                        dGVVendas.Refresh();
+                    }
                 }
             }
+
         }
 
         private void timer1_Tick(object sender, EventArgs e)
@@ -172,24 +184,16 @@ namespace Paobom
 
             if (tBCódigo.Text.Length == 13)
             {
-                try
-                {
-                    qrcode = Convert.ToDouble(tBCódigo.Text);
+                qrcode = Convert.ToDouble(tBCódigo.Text);
 
 
-                    buscarValor();
-                    inserirProduto();
-                    tBCódigo.Clear();
-                }
-                catch (Exception a)
-                {
-                    MessageBox.Show(a.Message, "Teste", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    throw;
-                }
+                buscarValor();
+                inserirProduto();
+                tBCódigo.Clear();
             }
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void limparCarrinho()
         {
             var resposta = MessageBox.Show("Você deseja limpar o carrinho?", "Aviso", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
             if (resposta == DialogResult.Yes)
@@ -201,8 +205,7 @@ namespace Paobom
                 }
             }
         }
-
-        public void finalizarCompra()
+        private void finalizarCompra()
         {
             if (dGVVendas.Rows.Count > 0)
             {
@@ -211,6 +214,34 @@ namespace Paobom
             else
             {
                 // faz nada :thumbsup
+            }
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            if (dGVVendas.SelectedRows.Count > 0)
+            {
+                var resposta = MessageBox.Show("Você realmente deseja remover o produto?", "Aviso", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                if (resposta == DialogResult.Yes)
+                {
+
+                    foreach (DataGridViewRow linhas in dGVVendas.SelectedRows)
+                    {
+                        dGVVendas.Rows.Remove(linhas);
+                    }
+
+                    if (dGVVendas.InvokeRequired)
+                    {
+                        dGVVendas.Invoke((MethodInvoker)delegate
+                        {
+                            dGVVendas.Refresh();
+                        });
+                    }
+                    else
+                    {
+                        dGVVendas.Refresh();
+                    }
+                }
             }
         }
     }

@@ -33,13 +33,12 @@
             button1 = new Button();
             dGVVendas = new DataGridView();
             tBCódigo = new TextBox();
-            btnRemover = new Button();
             lbTotal = new Label();
             timer1 = new System.Windows.Forms.Timer(components);
-            button2 = new Button();
             pictureBox1 = new PictureBox();
             lblTotal = new Label();
             groupBox1 = new GroupBox();
+            button2 = new Button();
             ((System.ComponentModel.ISupportInitialize)dGVVendas).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
@@ -74,16 +73,6 @@
             tBCódigo.Size = new Size(170, 29);
             tBCódigo.TabIndex = 2;
             // 
-            // btnRemover
-            // 
-            btnRemover.Location = new Point(408, 179);
-            btnRemover.Name = "btnRemover";
-            btnRemover.Size = new Size(170, 33);
-            btnRemover.TabIndex = 3;
-            btnRemover.Text = "Remover Produto";
-            btnRemover.UseVisualStyleBackColor = true;
-            btnRemover.Click += btnRemover_Click;
-            // 
             // lbTotal
             // 
             lbTotal.AutoSize = true;
@@ -99,16 +88,6 @@
             // 
             timer1.Enabled = true;
             timer1.Tick += timer1_Tick;
-            // 
-            // button2
-            // 
-            button2.Location = new Point(408, 218);
-            button2.Name = "button2";
-            button2.Size = new Size(170, 33);
-            button2.TabIndex = 5;
-            button2.Text = "Limpar Carrinho";
-            button2.UseVisualStyleBackColor = true;
-            button2.Click += button2_Click;
             // 
             // pictureBox1
             // 
@@ -141,17 +120,27 @@
             groupBox1.TabIndex = 8;
             groupBox1.TabStop = false;
             // 
+            // button2
+            // 
+            button2.Location = new Point(408, 176);
+            button2.Margin = new Padding(4);
+            button2.Name = "button2";
+            button2.Size = new Size(170, 35);
+            button2.TabIndex = 9;
+            button2.Text = "Testar Banco";
+            button2.UseVisualStyleBackColor = true;
+            button2.Click += button2_Click;
+            // 
             // FormMenuPrincipal
             // 
             AutoScaleDimensions = new SizeF(11F, 22F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = SystemColors.ActiveCaption;
+            BackColor = Color.Snow;
             ClientSize = new Size(1440, 881);
+            Controls.Add(button2);
             Controls.Add(groupBox1);
             Controls.Add(lblTotal);
             Controls.Add(lbTotal);
-            Controls.Add(button2);
-            Controls.Add(btnRemover);
             Controls.Add(tBCódigo);
             Controls.Add(dGVVendas);
             Controls.Add(button1);
@@ -177,12 +166,11 @@
         private Button button1;
         private DataGridView dGVVendas;
         private TextBox tBCódigo;
-        private Button btnRemover;
         private Label lbTotal;
         private System.Windows.Forms.Timer timer1;
-        private Button button2;
         private PictureBox pictureBox1;
         private Label lblTotal;
         private GroupBox groupBox1;
+        private Button button2;
     }
 }
