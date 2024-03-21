@@ -37,7 +37,8 @@
             timer1 = new System.Windows.Forms.Timer(components);
             pictureBox1 = new PictureBox();
             lblTotal = new Label();
-            groupBox1 = new GroupBox();
+            lblData = new Label();
+            lblHora = new Label();
             button2 = new Button();
             ((System.ComponentModel.ISupportInitialize)dGVVendas).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
@@ -58,7 +59,9 @@
             // 
             dGVVendas.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             dGVVendas.BackgroundColor = SystemColors.Control;
+            dGVVendas.BorderStyle = BorderStyle.Fixed3D;
             dGVVendas.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dGVVendas.GridColor = Color.White;
             dGVVendas.Location = new Point(597, 218);
             dGVVendas.Margin = new Padding(4);
             dGVVendas.Name = "dGVVendas";
@@ -112,13 +115,27 @@
             lblTotal.TabIndex = 7;
             lblTotal.Text = "Valor Total";
             // 
-            // groupBox1
+            // lblData
             // 
-            groupBox1.Location = new Point(597, 12);
-            groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(830, 199);
-            groupBox1.TabIndex = 8;
-            groupBox1.TabStop = false;
+            lblData.AutoSize = true;
+            lblData.BackColor = Color.Transparent;
+            lblData.Font = new Font("Arial", 46F);
+            lblData.Location = new Point(307, 261);
+            lblData.Name = "lblData";
+            lblData.Size = new Size(183, 69);
+            lblData.TabIndex = 11;
+            lblData.Text = "21/03";
+            // 
+            // lblHora
+            // 
+            lblHora.AutoSize = true;
+            lblHora.BackColor = Color.Transparent;
+            lblHora.Font = new Font("Arial", 46F);
+            lblHora.Location = new Point(307, 330);
+            lblHora.Name = "lblHora";
+            lblHora.Size = new Size(178, 69);
+            lblHora.TabIndex = 10;
+            lblHora.Text = "15:11";
             // 
             // button2
             // 
@@ -137,8 +154,9 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.Snow;
             ClientSize = new Size(1440, 881);
+            Controls.Add(lblHora);
+            Controls.Add(lblData);
             Controls.Add(button2);
-            Controls.Add(groupBox1);
             Controls.Add(lblTotal);
             Controls.Add(lbTotal);
             Controls.Add(tBCódigo);
@@ -170,7 +188,8 @@
         private System.Windows.Forms.Timer timer1;
         private PictureBox pictureBox1;
         private Label lblTotal;
-        private GroupBox groupBox1;
         private Button button2;
+        private Label lblData;
+        private Label lblHora;
     }
 }

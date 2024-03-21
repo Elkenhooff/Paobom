@@ -1,12 +1,18 @@
+using NonInvasiveKeyboardHookLibrary;
+
 namespace Paobom
 {
     public partial class FormPaoBom : Form
     {
         private FormMenuPrincipal menuprincipalInstancia;
+        bool sistema = false;
         public FormPaoBom()
         {
             InitializeComponent();
             BD.ProcurarArquivo("BDPaoBom.mdf");
+            KeyboardHookManager atalho = new KeyboardHookManager();
+            atalho.Start();
+            atalho.RegisterHotkey(NonInvasiveKeyboardHookLibrary.ModifierKeys.Control, (int)Keys.F9, ativarSistema);
         }
 
         private void cadastroDeProdutosToolStripMenuItem_Click(object sender, EventArgs e)
@@ -41,6 +47,20 @@ namespace Paobom
                 menuprincipalInstancia = new FormMenuPrincipal();
             }
             menuprincipalInstancia.Show();
+        }
+        
+        private void ativarSistema()
+        {
+            if (sistema)
+            {
+                sistemaToolStripMenuItem.Visible = false;
+                sistema = false;
+            }
+            else
+            {
+                sistemaToolStripMenuItem.Visible = true;
+                sistema = true;
+            }
         }
     }
 }

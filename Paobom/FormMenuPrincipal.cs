@@ -172,6 +172,7 @@ namespace Paobom
                     total += Convert.ToDecimal(totalString);
                 }
             }
+
             if (total != 0)
             {
                 lbTotal.Text = "R$ " + total.ToString("F2");
@@ -182,6 +183,8 @@ namespace Paobom
                 lblTotal.Text = lbTotal.Text = "";
             }
 
+
+
             if (tBCódigo.Text.Length == 13)
             {
                 qrcode = Convert.ToDouble(tBCódigo.Text);
@@ -190,7 +193,12 @@ namespace Paobom
                 buscarValor();
                 inserirProduto();
                 tBCódigo.Clear();
+                tBCódigo.Focus();
             }
+
+            /* Hora e Data */
+            lblData.Text = DateTime.Now.ToShortDateString().Substring(0, 5);
+            lblHora.Text = DateTime.Now.ToShortTimeString();
         }
 
         private void limparCarrinho()

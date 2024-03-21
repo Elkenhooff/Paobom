@@ -60,6 +60,7 @@
             sistemaToolStripMenuItem.Name = "sistemaToolStripMenuItem";
             sistemaToolStripMenuItem.Size = new Size(91, 26);
             sistemaToolStripMenuItem.Text = "Sistema";
+            sistemaToolStripMenuItem.Visible = false;
             // 
             // estoqueToolStripMenuItem
             // 
