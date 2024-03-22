@@ -19,5 +19,11 @@
     <Compile Update="FormStart.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="FormLoginDiario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="FormSenhaDiaria.cs">
+      <SubType>Form</SubType>
+    </Compile>
   </ItemGroup>
 </Project>

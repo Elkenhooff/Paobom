@@ -39,9 +39,10 @@
             lblTotal = new Label();
             lblData = new Label();
             lblHora = new Label();
-            button2 = new Button();
+            pictureBox2 = new PictureBox();
             ((System.ComponentModel.ISupportInitialize)dGVVendas).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             SuspendLayout();
             // 
             // button1
@@ -67,6 +68,7 @@
             dGVVendas.Name = "dGVVendas";
             dGVVendas.Size = new Size(830, 478);
             dGVVendas.TabIndex = 1;
+            dGVVendas.KeyDown += pressionarTecla;
             // 
             // tBCódigo
             // 
@@ -137,16 +139,17 @@
             lblHora.TabIndex = 10;
             lblHora.Text = "15:11";
             // 
-            // button2
+            // pictureBox2
             // 
-            button2.Location = new Point(408, 176);
-            button2.Margin = new Padding(4);
-            button2.Name = "button2";
-            button2.Size = new Size(170, 35);
-            button2.TabIndex = 9;
-            button2.Text = "Testar Banco";
-            button2.UseVisualStyleBackColor = true;
-            button2.Click += button2_Click;
+            pictureBox2.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            pictureBox2.BackColor = Color.Transparent;
+            pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
+            pictureBox2.Location = new Point(597, 12);
+            pictureBox2.Name = "pictureBox2";
+            pictureBox2.Size = new Size(834, 199);
+            pictureBox2.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox2.TabIndex = 12;
+            pictureBox2.TabStop = false;
             // 
             // FormMenuPrincipal
             // 
@@ -154,9 +157,9 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.Snow;
             ClientSize = new Size(1440, 881);
+            Controls.Add(pictureBox2);
             Controls.Add(lblHora);
             Controls.Add(lblData);
-            Controls.Add(button2);
             Controls.Add(lblTotal);
             Controls.Add(lbTotal);
             Controls.Add(tBCódigo);
@@ -173,8 +176,10 @@
             Text = "FormMenuPrincipal";
             WindowState = FormWindowState.Maximized;
             FormClosing += FormMenuPrincipal_FormClosing;
+            KeyDown += pressionarTecla;
             ((System.ComponentModel.ISupportInitialize)dGVVendas).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -188,8 +193,8 @@
         private System.Windows.Forms.Timer timer1;
         private PictureBox pictureBox1;
         private Label lblTotal;
-        private Button button2;
         private Label lblData;
         private Label lblHora;
+        private PictureBox pictureBox2;
     }
 }

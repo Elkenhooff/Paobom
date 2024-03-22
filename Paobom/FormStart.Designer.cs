@@ -65,14 +65,14 @@
             // estoqueToolStripMenuItem
             // 
             estoqueToolStripMenuItem.Name = "estoqueToolStripMenuItem";
-            estoqueToolStripMenuItem.Size = new Size(180, 26);
+            estoqueToolStripMenuItem.Size = new Size(178, 26);
             estoqueToolStripMenuItem.Text = "Estoque";
             // 
             // funcionárioToolStripMenuItem
             // 
             funcionárioToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { cadastroDeFuncionáriosToolStripMenuItem, listaFuncionáriosToolStripMenuItem });
             funcionárioToolStripMenuItem.Name = "funcionárioToolStripMenuItem";
-            funcionárioToolStripMenuItem.Size = new Size(180, 26);
+            funcionárioToolStripMenuItem.Size = new Size(178, 26);
             funcionárioToolStripMenuItem.Text = "Funcionário";
             // 
             // cadastroDeFuncionáriosToolStripMenuItem
@@ -93,7 +93,7 @@
             // 
             produtoToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { cadastroDeProdutosToolStripMenuItem, listaProdutoToolStripMenuItem });
             produtoToolStripMenuItem.Name = "produtoToolStripMenuItem";
-            produtoToolStripMenuItem.Size = new Size(180, 26);
+            produtoToolStripMenuItem.Size = new Size(178, 26);
             produtoToolStripMenuItem.Text = "Produto";
             // 
             // cadastroDeProdutosToolStripMenuItem
@@ -135,6 +135,7 @@
             Name = "FormPaoBom";
             Text = "Paobom";
             WindowState = FormWindowState.Maximized;
+            KeyDown += FormPaoBom_KeyDown;
             menuStrip1.ResumeLayout(false);
             menuStrip1.PerformLayout();
             ResumeLayout(false);

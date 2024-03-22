@@ -38,10 +38,10 @@ namespace Paobom
                 }
                 catch (Exception erroBug)
                 {
-                    MessageBox.Show(erroBug.Message, "Erro ao encontrar o arquivo", MessageBoxButtons.OK, MessageBoxIcon.Information); // Se houver erro em encontrar as os arquivos
+                    MessageBox.Show(erroBug.Message, "Erro ao encontrar o banco de dados", MessageBoxButtons.OK, MessageBoxIcon.Information); // Se houver erro em encontrar as os arquivos
                 }
             }
-            return null; // Retorna null por causa que o método exige uma saída de valor
+            return caminhoBanco; // Retorna o banco de dados por causa que o método exige uma saída de valor
         }
 
         public static string StringConexao

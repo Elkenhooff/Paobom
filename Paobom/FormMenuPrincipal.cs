@@ -1,6 +1,7 @@
-﻿using NonInvasiveKeyboardHookLibrary;
+﻿//using NonInvasiveKeyboardHookLibrary;
 using System.Data;
 using System.Data.SqlClient;
+using System.Windows.Forms;
 
 //MercadoPagoConfig.AccessToken = "ENV_ACCESS_TOKEN";
 
@@ -19,13 +20,20 @@ namespace Paobom
         public FormMenuPrincipal()
         {
             InitializeComponent();
-            KeyboardHookManager keyboardHookManager = new KeyboardHookManager();
-            keyboardHookManager.Start();
-            keyboardHookManager.RegisterHotkey(NonInvasiveKeyboardHookLibrary.ModifierKeys.Control, (int)Keys.F8, fecharAplicacao);
-            keyboardHookManager.RegisterHotkey(NonInvasiveKeyboardHookLibrary.ModifierKeys.Control, (int)Keys.Enter, finalizarCompra);
-            keyboardHookManager.RegisterHotkey(NonInvasiveKeyboardHookLibrary.ModifierKeys.Control, (int)Keys.L, limparCarrinho);
-            keyboardHookManager.RegisterHotkey(NonInvasiveKeyboardHookLibrary.ModifierKeys.Control, (int)Keys.R, removerProduto);
             lbTotal.BackColor = lblTotal.BackColor = Color.FromArgb(0xFF, 0xDE, 0x59);
+
+            /* Essa podridão do nonInvasiveKeyBoard não presta. */
+
+
+            // KeyboardHookManager keyboardHookManager = new KeyboardHookManager();
+            // keyboardHookManager.Start();
+            // keyboardHookManager.RegisterHotkey(NonInvasiveKeyboardHookLibrary.ModifierKeys.Control, (int)Keys.F8, fecharAplicacao);
+            // keyboardHookManager.RegisterHotkey(NonInvasiveKeyboardHookLibrary.ModifierKeys.Control, (int)Keys.Enter, finalizarCompra);
+            // keyboardHookManager.RegisterHotkey(NonInvasiveKeyboardHookLibrary.ModifierKeys.Control, (int)Keys.L, limparCarrinho);
+            // keyboardHookManager.RegisterHotkey(NonInvasiveKeyboardHookLibrary.ModifierKeys.Control, (int)Keys.R, removerProduto);
+
+
+
             //this.FormClosing -= FormMenuPrincipal_FormClosing; // Evitar de ficar apertando CTRL F8 para efetuar os testes na aplicação
         }
 
@@ -137,9 +145,9 @@ namespace Paobom
                 if (resposta == DialogResult.Yes)
                 {
 
-                    foreach (DataGridViewRow linhas in dGVVendas.SelectedRows)
+                    for (int i = 0; i == dGVVendas.SelectedRows.Count - 1; i++)
                     {
-                        dGVVendas.Rows.Remove(linhas);
+                        dGVVendas.Rows.RemoveAt(i);
                     }
 
                     if (dGVVendas.InvokeRequired)
@@ -160,6 +168,7 @@ namespace Paobom
 
         private void timer1_Tick(object sender, EventArgs e)
         {
+            /* Label Valor Total */
             decimal total = 0;
 
             foreach (DataGridViewRow linha in dGVVendas.Rows)
@@ -184,7 +193,7 @@ namespace Paobom
             }
 
 
-
+            /* Inserir código de barra */
             if (tBCódigo.Text.Length == 13)
             {
                 qrcode = Convert.ToDouble(tBCódigo.Text);
@@ -224,32 +233,34 @@ namespace Paobom
                 // faz nada :thumbsup
             }
         }
-
-        private void button2_Click(object sender, EventArgs e)
+        private void pressionarTecla(object sender, KeyEventArgs e)
         {
-            if (dGVVendas.SelectedRows.Count > 0)
+            switch (e.KeyCode)
             {
-                var resposta = MessageBox.Show("Você realmente deseja remover o produto?", "Aviso", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
-                if (resposta == DialogResult.Yes)
-                {
-
-                    foreach (DataGridViewRow linhas in dGVVendas.SelectedRows)
+                case Keys.R:
+                    if (e.Control)
                     {
-                        dGVVendas.Rows.Remove(linhas);
+                        removerProduto();
                     }
-
-                    if (dGVVendas.InvokeRequired)
+                    break;
+                case Keys.L:
+                    if (e.Control)
                     {
-                        dGVVendas.Invoke((MethodInvoker)delegate
-                        {
-                            dGVVendas.Refresh();
-                        });
+                        limparCarrinho();
                     }
-                    else
+                    break;
+                case Keys.Enter:
+                    if (e.Control)
                     {
-                        dGVVendas.Refresh();
+                        finalizarCompra();
                     }
-                }
+                    break;
+                case Keys.F8:
+                    if (e.Control)
+                    {
+                        fecharAplicacao();
+                    }
+                    break;
             }
         }
     }

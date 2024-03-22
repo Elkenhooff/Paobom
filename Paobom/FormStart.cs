@@ -1,18 +1,20 @@
-using NonInvasiveKeyboardHookLibrary;
-
 namespace Paobom
 {
     public partial class FormPaoBom : Form
     {
-        private FormMenuPrincipal menuprincipalInstancia;
         bool sistema = false;
+        string senhaSistema = "";
         public FormPaoBom()
         {
             InitializeComponent();
             BD.ProcurarArquivo("BDPaoBom.mdf");
-            KeyboardHookManager atalho = new KeyboardHookManager();
-            atalho.Start();
-            atalho.RegisterHotkey(NonInvasiveKeyboardHookLibrary.ModifierKeys.Control, (int)Keys.F9, ativarSistema);
+
+
+            // Podridão abaixo.
+
+            //KeyboardHookManager atalho = new KeyboardHookManager();
+            //atalho.Start();
+            //atalho.RegisterHotkey(NonInvasiveKeyboardHookLibrary.ModifierKeys.Control, (int)Keys.F9, ativarSistema);
         }
 
         private void cadastroDeProdutosToolStripMenuItem_Click(object sender, EventArgs e)
@@ -42,24 +44,50 @@ namespace Paobom
 
         private void menuPrincipalToolStripMenuItem_Click_1(object sender, EventArgs e)
         {
-            if (menuprincipalInstancia == null || menuprincipalInstancia.IsDisposed)
-            {
-                menuprincipalInstancia = new FormMenuPrincipal();
-            }
-            menuprincipalInstancia.Show();
+            FormMenuPrincipal menuPrincipal = new FormMenuPrincipal();
+            menuPrincipal.ShowDialog();
         }
-        
+
         private void ativarSistema()
         {
-            if (sistema)
+            if (senhaSistema == "")
             {
-                sistemaToolStripMenuItem.Visible = false;
-                sistema = false;
+                MessageBox.Show("Senha não definida.", "Sistema");
+                FormSenhaDiaria senha = new FormSenhaDiaria();
+                senha.ShowDialog();
+                senhaSistema = senha.getSenha();
             }
             else
             {
-                sistemaToolStripMenuItem.Visible = true;
-                sistema = true;
+                MessageBox.Show("Por favor insira a senha do sistema", "Sistema");
+                FormLoginDiario loginDiario = new FormLoginDiario();
+                loginDiario.ShowDialog();
+                if (loginDiario.getTentativa() == senhaSistema)
+                {
+                    if (sistema)
+                    {
+                        sistemaToolStripMenuItem.Visible = false;
+                        sistema = false;
+                    }
+                    else
+                    {
+                        sistemaToolStripMenuItem.Visible = true;
+                        sistema = true;
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Senha inválida", "Sistema");
+                }
+            }
+
+        }
+
+        private void FormPaoBom_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Control && e.KeyCode == Keys.F9)
+            {
+                ativarSistema();
             }
         }
     }
