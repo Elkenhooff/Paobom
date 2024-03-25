@@ -90,5 +90,11 @@ namespace Paobom
                 ativarSistema();
             }
         }
+
+        private void vendasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormVendas vendas = new FormVendas();
+            vendas.ShowDialog();
+        }
     }
 }

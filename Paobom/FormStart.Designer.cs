@@ -31,7 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormPaoBom));
             menuStrip1 = new MenuStrip();
             sistemaToolStripMenuItem = new ToolStripMenuItem();
-            estoqueToolStripMenuItem = new ToolStripMenuItem();
+            vendasToolStripMenuItem = new ToolStripMenuItem();
             funcionárioToolStripMenuItem = new ToolStripMenuItem();
             cadastroDeFuncionáriosToolStripMenuItem = new ToolStripMenuItem();
             listaFuncionáriosToolStripMenuItem = new ToolStripMenuItem();
@@ -55,18 +55,19 @@
             // 
             // sistemaToolStripMenuItem
             // 
-            sistemaToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { estoqueToolStripMenuItem, funcionárioToolStripMenuItem, produtoToolStripMenuItem });
+            sistemaToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { vendasToolStripMenuItem, funcionárioToolStripMenuItem, produtoToolStripMenuItem });
             sistemaToolStripMenuItem.Font = new Font("Arial", 14F);
             sistemaToolStripMenuItem.Name = "sistemaToolStripMenuItem";
             sistemaToolStripMenuItem.Size = new Size(91, 26);
             sistemaToolStripMenuItem.Text = "Sistema";
             sistemaToolStripMenuItem.Visible = false;
             // 
-            // estoqueToolStripMenuItem
+            // vendasToolStripMenuItem
             // 
-            estoqueToolStripMenuItem.Name = "estoqueToolStripMenuItem";
-            estoqueToolStripMenuItem.Size = new Size(178, 26);
-            estoqueToolStripMenuItem.Text = "Estoque";
+            vendasToolStripMenuItem.Name = "vendasToolStripMenuItem";
+            vendasToolStripMenuItem.Size = new Size(178, 26);
+            vendasToolStripMenuItem.Text = "Vendas";
+            vendasToolStripMenuItem.Click += vendasToolStripMenuItem_Click;
             // 
             // funcionárioToolStripMenuItem
             // 
@@ -146,7 +147,7 @@
 
         private MenuStrip menuStrip1;
         private ToolStripMenuItem sistemaToolStripMenuItem;
-        private ToolStripMenuItem estoqueToolStripMenuItem;
+        private ToolStripMenuItem vendasToolStripMenuItem;
         private ToolStripMenuItem funcionárioToolStripMenuItem;
         private ToolStripMenuItem cadastroDeFuncionáriosToolStripMenuItem;
         private ToolStripMenuItem listaFuncionáriosToolStripMenuItem;

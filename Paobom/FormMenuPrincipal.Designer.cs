@@ -35,14 +35,10 @@
             tBCódigo = new TextBox();
             lbTotal = new Label();
             timer1 = new System.Windows.Forms.Timer(components);
-            pictureBox1 = new PictureBox();
             lblTotal = new Label();
             lblData = new Label();
             lblHora = new Label();
-            pictureBox2 = new PictureBox();
             ((System.ComponentModel.ISupportInitialize)dGVVendas).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             SuspendLayout();
             // 
             // button1
@@ -55,6 +51,7 @@
             button1.Text = "Testar Banco";
             button1.UseVisualStyleBackColor = true;
             button1.Click += button1_Click;
+            button1.KeyDown += pressionarTecla;
             // 
             // dGVVendas
             // 
@@ -63,10 +60,10 @@
             dGVVendas.BorderStyle = BorderStyle.Fixed3D;
             dGVVendas.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dGVVendas.GridColor = Color.White;
-            dGVVendas.Location = new Point(597, 218);
+            dGVVendas.Location = new Point(656, 218);
             dGVVendas.Margin = new Padding(4);
             dGVVendas.Name = "dGVVendas";
-            dGVVendas.Size = new Size(830, 478);
+            dGVVendas.Size = new Size(728, 499);
             dGVVendas.TabIndex = 1;
             dGVVendas.KeyDown += pressionarTecla;
             // 
@@ -77,12 +74,14 @@
             tBCódigo.Name = "tBCódigo";
             tBCódigo.Size = new Size(170, 29);
             tBCódigo.TabIndex = 2;
+            tBCódigo.KeyDown += pressionarTecla;
             // 
             // lbTotal
             // 
             lbTotal.AutoSize = true;
             lbTotal.BackColor = Color.Transparent;
             lbTotal.Font = new Font("Arial", 46F);
+            lbTotal.ForeColor = Color.Olive;
             lbTotal.Location = new Point(1028, 765);
             lbTotal.Name = "lbTotal";
             lbTotal.Size = new Size(356, 69);
@@ -94,23 +93,12 @@
             timer1.Enabled = true;
             timer1.Tick += timer1_Tick;
             // 
-            // pictureBox1
-            // 
-            pictureBox1.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            pictureBox1.BackColor = Color.Transparent;
-            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(597, 710);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(834, 178);
-            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox1.TabIndex = 6;
-            pictureBox1.TabStop = false;
-            // 
             // lblTotal
             // 
             lblTotal.AutoSize = true;
-            lblTotal.BackColor = Color.AliceBlue;
+            lblTotal.BackColor = Color.Transparent;
             lblTotal.Font = new Font("Arial", 46F);
+            lblTotal.ForeColor = Color.Olive;
             lblTotal.Location = new Point(656, 765);
             lblTotal.Name = "lblTotal";
             lblTotal.Size = new Size(315, 69);
@@ -122,7 +110,8 @@
             lblData.AutoSize = true;
             lblData.BackColor = Color.Transparent;
             lblData.Font = new Font("Arial", 46F);
-            lblData.Location = new Point(307, 261);
+            lblData.ForeColor = SystemColors.ControlLight;
+            lblData.Location = new Point(656, 78);
             lblData.Name = "lblData";
             lblData.Size = new Size(183, 69);
             lblData.TabIndex = 11;
@@ -133,31 +122,20 @@
             lblHora.AutoSize = true;
             lblHora.BackColor = Color.Transparent;
             lblHora.Font = new Font("Arial", 46F);
-            lblHora.Location = new Point(307, 330);
+            lblHora.ForeColor = SystemColors.ControlLight;
+            lblHora.Location = new Point(1206, 78);
             lblHora.Name = "lblHora";
             lblHora.Size = new Size(178, 69);
             lblHora.TabIndex = 10;
             lblHora.Text = "15:11";
-            // 
-            // pictureBox2
-            // 
-            pictureBox2.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            pictureBox2.BackColor = Color.Transparent;
-            pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
-            pictureBox2.Location = new Point(597, 12);
-            pictureBox2.Name = "pictureBox2";
-            pictureBox2.Size = new Size(834, 199);
-            pictureBox2.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox2.TabIndex = 12;
-            pictureBox2.TabStop = false;
             // 
             // FormMenuPrincipal
             // 
             AutoScaleDimensions = new SizeF(11F, 22F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.Snow;
+            BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             ClientSize = new Size(1440, 881);
-            Controls.Add(pictureBox2);
             Controls.Add(lblHora);
             Controls.Add(lblData);
             Controls.Add(lblTotal);
@@ -165,9 +143,8 @@
             Controls.Add(tBCódigo);
             Controls.Add(dGVVendas);
             Controls.Add(button1);
-            Controls.Add(pictureBox1);
             Font = new Font("Arial", 14F);
-            FormBorderStyle = FormBorderStyle.None;
+            FormBorderStyle = FormBorderStyle.FixedSingle;
             Margin = new Padding(5);
             MaximizeBox = false;
             MinimizeBox = false;
@@ -178,8 +155,6 @@
             FormClosing += FormMenuPrincipal_FormClosing;
             KeyDown += pressionarTecla;
             ((System.ComponentModel.ISupportInitialize)dGVVendas).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -191,10 +166,8 @@
         private TextBox tBCódigo;
         private Label lbTotal;
         private System.Windows.Forms.Timer timer1;
-        private PictureBox pictureBox1;
         private Label lblTotal;
         private Label lblData;
         private Label lblHora;
-        private PictureBox pictureBox2;
     }
 }

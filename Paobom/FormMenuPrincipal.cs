@@ -20,7 +20,8 @@ namespace Paobom
         public FormMenuPrincipal()
         {
             InitializeComponent();
-            lbTotal.BackColor = lblTotal.BackColor = Color.FromArgb(0xFF, 0xDE, 0x59);
+            lblHora.ForeColor = lblTotal.ForeColor = lbTotal.ForeColor = lblData.ForeColor = Color.FromArgb(0x9a, 0x7b, 0x4d);
+            //dGVVendas.BackgroundColor = lblData.BackColor = lblHora.BackColor = lbTotal.BackColor = lblTotal.BackColor = Color.FromArgb(0x6d, 0x5d, 0x2a);
 
             /* Essa podridão do nonInvasiveKeyBoard não presta. */
 
@@ -99,7 +100,7 @@ namespace Paobom
             dGVVendas.RowHeadersVisible = false;
 
             dGVVendas.Columns[0].Width = 120;
-            dGVVendas.Columns[1].Width = 587;
+            dGVVendas.Columns[1].Width = 485;
             dGVVendas.Columns[2].Width = 120;
 
 
@@ -145,9 +146,9 @@ namespace Paobom
                 if (resposta == DialogResult.Yes)
                 {
 
-                    for (int i = 0; i == dGVVendas.SelectedRows.Count - 1; i++)
+                    foreach (DataGridViewRow linhas in dGVVendas.SelectedRows)
                     {
-                        dGVVendas.Rows.RemoveAt(i);
+                        dGVVendas.Rows.Remove(linhas);
                     }
 
                     if (dGVVendas.InvokeRequired)
