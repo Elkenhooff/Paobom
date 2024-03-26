@@ -30,8 +30,8 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormCadastraProdutos));
             pictureBox1 = new PictureBox();
-            txtBarra = new TextBox();
             groupBox1 = new GroupBox();
+            txtBarra = new MaskedTextBox();
             button1 = new Button();
             rTBObservacao = new RichTextBox();
             label7 = new Label();
@@ -55,26 +55,20 @@
             // pictureBox1
             // 
             pictureBox1.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            pictureBox1.BackgroundImage = (Image)resources.GetObject("pictureBox1.BackgroundImage");
+            pictureBox1.BackColor = Color.White;
             pictureBox1.BackgroundImageLayout = ImageLayout.Stretch;
+            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
             pictureBox1.Location = new Point(12, 12);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(1416, 189);
             pictureBox1.TabIndex = 0;
             pictureBox1.TabStop = false;
             // 
-            // txtBarra
-            // 
-            txtBarra.Font = new Font("Arial", 14F);
-            txtBarra.Location = new Point(6, 68);
-            txtBarra.Name = "txtBarra";
-            txtBarra.Size = new Size(309, 29);
-            txtBarra.TabIndex = 0;
-            // 
             // groupBox1
             // 
-            groupBox1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            groupBox1.BackColor = Color.Transparent;
+            groupBox1.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            groupBox1.BackColor = Color.White;
+            groupBox1.Controls.Add(txtBarra);
             groupBox1.Controls.Add(button1);
             groupBox1.Controls.Add(rTBObservacao);
             groupBox1.Controls.Add(label7);
@@ -91,30 +85,38 @@
             groupBox1.Controls.Add(lblValor);
             groupBox1.Controls.Add(label2);
             groupBox1.Controls.Add(label1);
-            groupBox1.Controls.Add(txtBarra);
             groupBox1.Font = new Font("Arial", 14F);
-            groupBox1.Location = new Point(12, 194);
+            groupBox1.Location = new Point(12, 207);
             groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(1396, 792);
+            groupBox1.Size = new Size(1416, 542);
             groupBox1.TabIndex = 1;
             groupBox1.TabStop = false;
             groupBox1.Text = "Cadastro";
             // 
+            // txtBarra
+            // 
+            txtBarra.Font = new Font("Arial", 14F);
+            txtBarra.Location = new Point(7, 68);
+            txtBarra.Mask = "0000000000000";
+            txtBarra.Name = "txtBarra";
+            txtBarra.Size = new Size(309, 29);
+            txtBarra.TabIndex = 17;
+            // 
             // button1
             // 
             button1.Font = new Font("Arial", 14F);
-            button1.Location = new Point(453, 184);
+            button1.Location = new Point(7, 212);
             button1.Name = "button1";
-            button1.Size = new Size(263, 116);
+            button1.Size = new Size(218, 58);
             button1.TabIndex = 16;
-            button1.Text = "Testar o banco de dados.";
+            button1.Text = "Cadastrar Produto";
             button1.UseVisualStyleBackColor = true;
             button1.Click += button1_Click;
             // 
             // rTBObservacao
             // 
             rTBObservacao.Font = new Font("Arial", 14F);
-            rTBObservacao.Location = new Point(7, 427);
+            rTBObservacao.Location = new Point(521, 174);
             rTBObservacao.Name = "rTBObservacao";
             rTBObservacao.Size = new Size(308, 96);
             rTBObservacao.TabIndex = 15;
@@ -124,7 +126,7 @@
             // 
             label7.AutoSize = true;
             label7.Font = new Font("Arial", 14F);
-            label7.Location = new Point(6, 406);
+            label7.Location = new Point(520, 153);
             label7.Name = "label7";
             label7.Size = new Size(124, 22);
             label7.TabIndex = 14;
@@ -136,7 +138,7 @@
             cBCategoria.Font = new Font("Arial", 14F);
             cBCategoria.FormattingEnabled = true;
             cBCategoria.Items.AddRange(new object[] { "Alimentos", "Bebidas", "Produto de Limpeza" });
-            cBCategoria.Location = new Point(6, 377);
+            cBCategoria.Location = new Point(520, 122);
             cBCategoria.MaxLength = 1;
             cBCategoria.Name = "cBCategoria";
             cBCategoria.Size = new Size(309, 30);
@@ -146,7 +148,7 @@
             // 
             label3.AutoSize = true;
             label3.Font = new Font("Arial", 14F);
-            label3.Location = new Point(6, 356);
+            label3.Location = new Point(520, 101);
             label3.Name = "label3";
             label3.Size = new Size(92, 22);
             label3.TabIndex = 12;
@@ -158,7 +160,7 @@
             cBoxMedida.Font = new Font("Arial", 14F);
             cBoxMedida.FormattingEnabled = true;
             cBoxMedida.Items.AddRange(new object[] { "Unidade", "KG" });
-            cBoxMedida.Location = new Point(6, 171);
+            cBoxMedida.Location = new Point(519, 68);
             cBoxMedida.MaxLength = 1;
             cBoxMedida.Name = "cBoxMedida";
             cBoxMedida.Size = new Size(309, 30);
@@ -169,7 +171,7 @@
             // 
             label6.AutoSize = true;
             label6.Font = new Font("Arial", 14F);
-            label6.Location = new Point(7, 150);
+            label6.Location = new Point(520, 47);
             label6.Name = "label6";
             label6.Size = new Size(174, 22);
             label6.TabIndex = 10;
@@ -180,7 +182,7 @@
             dTPValidade.CalendarFont = new Font("Arial", 12F);
             dTPValidade.Font = new Font("Arial", 14F);
             dTPValidade.Format = DateTimePickerFormat.Short;
-            dTPValidade.Location = new Point(6, 327);
+            dTPValidade.Location = new Point(1081, 126);
             dTPValidade.Name = "dTPValidade";
             dTPValidade.Size = new Size(309, 29);
             dTPValidade.TabIndex = 9;
@@ -190,7 +192,7 @@
             dTPFabricacao.CalendarFont = new Font("Arial", 12F);
             dTPFabricacao.Font = new Font("Arial", 14F);
             dTPFabricacao.Format = DateTimePickerFormat.Short;
-            dTPFabricacao.Location = new Point(6, 277);
+            dTPFabricacao.Location = new Point(1081, 69);
             dTPFabricacao.Name = "dTPFabricacao";
             dTPFabricacao.Size = new Size(309, 29);
             dTPFabricacao.TabIndex = 8;
@@ -198,7 +200,7 @@
             // mTBoxValor
             // 
             mTBoxValor.Font = new Font("Arial", 14F);
-            mTBoxValor.Location = new Point(6, 224);
+            mTBoxValor.Location = new Point(7, 174);
             mTBoxValor.Mask = "$ 000.00";
             mTBoxValor.Name = "mTBoxValor";
             mTBoxValor.Size = new Size(309, 29);
@@ -216,7 +218,7 @@
             // 
             label5.AutoSize = true;
             label5.Font = new Font("Arial", 14F);
-            label5.Location = new Point(6, 306);
+            label5.Location = new Point(1081, 101);
             label5.Name = "label5";
             label5.Size = new Size(154, 22);
             label5.TabIndex = 5;
@@ -226,7 +228,7 @@
             // 
             label4.AutoSize = true;
             label4.Font = new Font("Arial", 14F);
-            label4.Location = new Point(6, 256);
+            label4.Location = new Point(1081, 47);
             label4.Name = "label4";
             label4.Size = new Size(175, 22);
             label4.TabIndex = 4;
@@ -235,10 +237,10 @@
             // lblValor
             // 
             lblValor.AutoSize = true;
-            lblValor.Font = new Font("Arial", 12F);
-            lblValor.Location = new Point(6, 203);
+            lblValor.Font = new Font("Arial", 14F);
+            lblValor.Location = new Point(7, 153);
             lblValor.Name = "lblValor";
-            lblValor.Size = new Size(44, 18);
+            lblValor.Size = new Size(53, 22);
             lblValor.TabIndex = 3;
             lblValor.Text = "Valor";
             // 
@@ -266,11 +268,13 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.FromArgb(255, 192, 128);
-            BackgroundImageLayout = ImageLayout.Zoom;
-            ClientSize = new Size(1420, 857);
+            BackColor = Color.White;
+            BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
+            BackgroundImageLayout = ImageLayout.Stretch;
+            ClientSize = new Size(1440, 877);
             Controls.Add(groupBox1);
             Controls.Add(pictureBox1);
+            DoubleBuffered = true;
             FormBorderStyle = FormBorderStyle.Fixed3D;
             MaximizeBox = false;
             MinimizeBox = false;
@@ -287,7 +291,6 @@
         #endregion
 
         private PictureBox pictureBox1;
-        private TextBox txtBarra;
         private GroupBox groupBox1;
         private TextBox txtNome;
         private Label label5;
@@ -305,5 +308,6 @@
         private RichTextBox rTBObservacao;
         private Label label7;
         private Button button1;
+        private MaskedTextBox txtBarra;
     }
 }
