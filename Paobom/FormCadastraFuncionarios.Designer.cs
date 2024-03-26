@@ -72,10 +72,11 @@
             pictureBox1.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             pictureBox1.BackgroundImageLayout = ImageLayout.Stretch;
             pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(-2, -1);
+            pictureBox1.Location = new Point(12, 13);
             pictureBox1.Margin = new Padding(3, 4, 3, 4);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(1728, 189);
+            pictureBox1.Size = new Size(1416, 189);
+            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox1.TabIndex = 1;
             pictureBox1.TabStop = false;
             // 
@@ -111,29 +112,29 @@
             groupBox1.Controls.Add(label2);
             groupBox1.Controls.Add(label1);
             groupBox1.Font = new Font("Arial", 14F);
-            groupBox1.Location = new Point(12, 195);
+            groupBox1.Location = new Point(12, 209);
             groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(1416, 607);
+            groupBox1.Size = new Size(1416, 542);
             groupBox1.TabIndex = 2;
             groupBox1.TabStop = false;
             groupBox1.Text = "Cadastro";
             // 
             // btnInserir
             // 
-            btnInserir.Location = new Point(6, 363);
+            btnInserir.Location = new Point(1112, 432);
             btnInserir.Name = "btnInserir";
-            btnInserir.Size = new Size(345, 78);
+            btnInserir.Size = new Size(218, 58);
             btnInserir.TabIndex = 3;
-            btnInserir.Text = "Testar banco de dados";
+            btnInserir.Text = "Cadastrar Funcionário";
             btnInserir.UseVisualStyleBackColor = true;
             btnInserir.Click += btnInserir_Click;
             // 
             // dTPAdmissao
             // 
             dTPAdmissao.Format = DateTimePickerFormat.Short;
-            dTPAdmissao.Location = new Point(842, 77);
+            dTPAdmissao.Location = new Point(1112, 102);
             dTPAdmissao.Name = "dTPAdmissao";
-            dTPAdmissao.Size = new Size(200, 29);
+            dTPAdmissao.Size = new Size(218, 29);
             dTPAdmissao.TabIndex = 29;
             // 
             // cBStatus
@@ -141,18 +142,18 @@
             cBStatus.DropDownStyle = ComboBoxStyle.DropDownList;
             cBStatus.FormattingEnabled = true;
             cBStatus.Items.AddRange(new object[] { "Ativo", "Inativo", "Licença", "Suspenso", "Férias" });
-            cBStatus.Location = new Point(842, 306);
+            cBStatus.Location = new Point(1112, 331);
             cBStatus.Name = "cBStatus";
-            cBStatus.Size = new Size(200, 30);
+            cBStatus.Size = new Size(218, 30);
             cBStatus.TabIndex = 28;
             // 
             // cbSupervisor
             // 
             cbSupervisor.DropDownStyle = ComboBoxStyle.DropDownList;
             cbSupervisor.FormattingEnabled = true;
-            cbSupervisor.Location = new Point(842, 248);
+            cbSupervisor.Location = new Point(1112, 273);
             cbSupervisor.Name = "cbSupervisor";
-            cbSupervisor.Size = new Size(200, 30);
+            cbSupervisor.Size = new Size(218, 30);
             cbSupervisor.TabIndex = 27;
             // 
             // cBCargo
@@ -160,7 +161,7 @@
             cBCargo.DropDownStyle = ComboBoxStyle.DropDownList;
             cBCargo.FormattingEnabled = true;
             cBCargo.Items.AddRange(new object[] { "Gerente", "Padeiro", "Confeiteiro", "Atendente de Balcão", "Caixa", "Auxiliar de Produção", "Entregador", "Auxiliar de Limpeza" });
-            cBCargo.Location = new Point(457, 134);
+            cBCargo.Location = new Point(578, 159);
             cBCargo.Name = "cBCargo";
             cBCargo.Size = new Size(279, 30);
             cBCargo.TabIndex = 26;
@@ -170,9 +171,9 @@
             gBBeneficios.Controls.Add(cBAuxilio);
             gBBeneficios.Controls.Add(cBVale);
             gBBeneficios.Controls.Add(cBPlano);
-            gBBeneficios.Location = new Point(842, 109);
+            gBBeneficios.Location = new Point(1112, 134);
             gBBeneficios.Name = "gBBeneficios";
-            gBBeneficios.Size = new Size(200, 111);
+            gBBeneficios.Size = new Size(218, 111);
             gBBeneficios.TabIndex = 24;
             gBBeneficios.TabStop = false;
             gBBeneficios.Text = "Beneficios";
@@ -212,21 +213,21 @@
             cBHorario.DropDownStyle = ComboBoxStyle.DropDownList;
             cBHorario.FormattingEnabled = true;
             cBHorario.Items.AddRange(new object[] { "Manhã", "Tarde", "Noite", "Madrugada" });
-            cBHorario.Location = new Point(457, 303);
+            cBHorario.Location = new Point(578, 328);
             cBHorario.Name = "cBHorario";
             cBHorario.Size = new Size(279, 30);
             cBHorario.TabIndex = 23;
             // 
             // tBSetor
             // 
-            tBSetor.Location = new Point(457, 246);
+            tBSetor.Location = new Point(578, 271);
             tBSetor.Name = "tBSetor";
             tBSetor.Size = new Size(279, 29);
             tBSetor.TabIndex = 22;
             // 
             // mTBSalario
             // 
-            mTBSalario.Location = new Point(457, 191);
+            mTBSalario.Location = new Point(578, 216);
             mTBSalario.Mask = "$ 00,000.00";
             mTBSalario.Name = "mTBSalario";
             mTBSalario.Size = new Size(279, 29);
@@ -234,14 +235,14 @@
             // 
             // tbCodigo
             // 
-            tbCodigo.Location = new Point(457, 77);
+            tbCodigo.Location = new Point(578, 102);
             tbCodigo.Name = "tbCodigo";
             tbCodigo.Size = new Size(279, 29);
             tbCodigo.TabIndex = 19;
             // 
             // mTBTelefoneEmerg
             // 
-            mTBTelefoneEmerg.Location = new Point(6, 328);
+            mTBTelefoneEmerg.Location = new Point(6, 353);
             mTBTelefoneEmerg.Mask = "+55 (00) 00000-0000";
             mTBTelefoneEmerg.Name = "mTBTelefoneEmerg";
             mTBTelefoneEmerg.Size = new Size(218, 29);
@@ -249,7 +250,7 @@
             // 
             // mTBTelefone
             // 
-            mTBTelefone.Location = new Point(6, 271);
+            mTBTelefone.Location = new Point(6, 296);
             mTBTelefone.Mask = "+55 (00) 00000-0000";
             mTBTelefone.Name = "mTBTelefone";
             mTBTelefone.Size = new Size(218, 29);
@@ -257,7 +258,7 @@
             // 
             // rTBEndereco
             // 
-            rTBEndereco.Location = new Point(6, 191);
+            rTBEndereco.Location = new Point(6, 216);
             rTBEndereco.Name = "rTBEndereco";
             rTBEndereco.Size = new Size(357, 52);
             rTBEndereco.TabIndex = 16;
@@ -266,14 +267,17 @@
             // dTPNasc
             // 
             dTPNasc.Format = DateTimePickerFormat.Short;
-            dTPNasc.Location = new Point(6, 134);
+            dTPNasc.Location = new Point(6, 159);
+            dTPNasc.MaxDate = new DateTime(2010, 1, 1, 0, 0, 0, 0);
+            dTPNasc.MinDate = new DateTime(1960, 1, 1, 0, 0, 0, 0);
             dTPNasc.Name = "dTPNasc";
             dTPNasc.Size = new Size(181, 29);
             dTPNasc.TabIndex = 15;
+            dTPNasc.Value = new DateTime(2010, 1, 1, 0, 0, 0, 0);
             // 
             // tBNome
             // 
-            tBNome.Location = new Point(6, 77);
+            tBNome.Location = new Point(6, 102);
             tBNome.Name = "tBNome";
             tBNome.Size = new Size(357, 29);
             tBNome.TabIndex = 14;
@@ -281,7 +285,7 @@
             // label14
             // 
             label14.AutoSize = true;
-            label14.Location = new Point(6, 303);
+            label14.Location = new Point(6, 328);
             label14.Name = "label14";
             label14.Size = new Size(218, 22);
             label14.TabIndex = 13;
@@ -290,7 +294,7 @@
             // label13
             // 
             label13.AutoSize = true;
-            label13.Location = new Point(842, 281);
+            label13.Location = new Point(1112, 306);
             label13.Name = "label13";
             label13.Size = new Size(174, 22);
             label13.TabIndex = 12;
@@ -299,7 +303,7 @@
             // label12
             // 
             label12.AutoSize = true;
-            label12.Location = new Point(842, 223);
+            label12.Location = new Point(1112, 248);
             label12.Name = "label12";
             label12.Size = new Size(101, 22);
             label12.TabIndex = 11;
@@ -308,7 +312,7 @@
             // label10
             // 
             label10.AutoSize = true;
-            label10.Location = new Point(457, 278);
+            label10.Location = new Point(578, 303);
             label10.Name = "label10";
             label10.Size = new Size(176, 22);
             label10.TabIndex = 9;
@@ -317,7 +321,7 @@
             // label9
             // 
             label9.AutoSize = true;
-            label9.Location = new Point(457, 52);
+            label9.Location = new Point(578, 77);
             label9.Name = "label9";
             label9.Size = new Size(217, 22);
             label9.TabIndex = 8;
@@ -326,7 +330,7 @@
             // label8
             // 
             label8.AutoSize = true;
-            label8.Location = new Point(6, 109);
+            label8.Location = new Point(6, 134);
             label8.Name = "label8";
             label8.Size = new Size(181, 22);
             label8.TabIndex = 7;
@@ -335,7 +339,7 @@
             // label7
             // 
             label7.AutoSize = true;
-            label7.Location = new Point(6, 246);
+            label7.Location = new Point(6, 271);
             label7.Name = "label7";
             label7.Size = new Size(84, 22);
             label7.TabIndex = 6;
@@ -344,7 +348,7 @@
             // label6
             // 
             label6.AutoSize = true;
-            label6.Location = new Point(6, 166);
+            label6.Location = new Point(6, 191);
             label6.Name = "label6";
             label6.Size = new Size(93, 22);
             label6.TabIndex = 5;
@@ -353,7 +357,7 @@
             // label5
             // 
             label5.AutoSize = true;
-            label5.Location = new Point(842, 52);
+            label5.Location = new Point(1112, 77);
             label5.Name = "label5";
             label5.Size = new Size(165, 22);
             label5.TabIndex = 4;
@@ -362,7 +366,7 @@
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(457, 223);
+            label4.Location = new Point(578, 248);
             label4.Name = "label4";
             label4.Size = new Size(56, 22);
             label4.TabIndex = 3;
@@ -371,7 +375,7 @@
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(457, 109);
+            label3.Location = new Point(578, 134);
             label3.Name = "label3";
             label3.Size = new Size(62, 22);
             label3.TabIndex = 2;
@@ -380,7 +384,7 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(457, 166);
+            label2.Location = new Point(578, 191);
             label2.Name = "label2";
             label2.Size = new Size(68, 22);
             label2.TabIndex = 1;
@@ -389,7 +393,7 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(6, 52);
+            label1.Location = new Point(6, 77);
             label1.Name = "label1";
             label1.Size = new Size(61, 22);
             label1.TabIndex = 0;
@@ -399,10 +403,12 @@
             // 
             AutoScaleDimensions = new SizeF(9F, 18F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(1440, 877);
             Controls.Add(pictureBox1);
             Controls.Add(groupBox1);
+            DoubleBuffered = true;
             Font = new Font("Arial", 12F);
             FormBorderStyle = FormBorderStyle.Fixed3D;
             Margin = new Padding(4, 3, 4, 3);

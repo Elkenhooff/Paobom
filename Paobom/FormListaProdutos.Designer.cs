@@ -36,7 +36,7 @@
             // 
             dGVProdutos.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             dGVProdutos.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dGVProdutos.Location = new Point(20, 18);
+            dGVProdutos.Location = new Point(14, 22);
             dGVProdutos.Margin = new Padding(5, 4, 5, 4);
             dGVProdutos.Name = "dGVProdutos";
             dGVProdutos.Size = new Size(1219, 625);

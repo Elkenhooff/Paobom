@@ -52,8 +52,6 @@ namespace Paobom
             dGVFuncionarios.Columns[11].HeaderText = "Supervisor";
             dGVFuncionarios.Columns[12].HeaderText = "Status";
 
-
-
             dGVFuncionarios.Columns[0].Width = 125;
             dGVFuncionarios.Columns[1].Width = 320;
             dGVFuncionarios.Columns[2].Width = 115;
@@ -65,7 +63,7 @@ namespace Paobom
             dGVFuncionarios.Columns[8].Width = 80;
             dGVFuncionarios.Columns[9].Width = 115;
             dGVFuncionarios.Columns[10].Width = 500;
-            dGVFuncionarios.Columns[11].Width = 150;
+            dGVFuncionarios.Columns[11].Width = 320;
             dGVFuncionarios.Columns[12].Width = 80;
 
             dGVFuncionarios.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
