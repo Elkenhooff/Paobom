@@ -1,6 +1,7 @@
 ﻿//using NonInvasiveKeyboardHookLibrary;
 using System.Data;
 using System.Data.SqlClient;
+using System.Security.Policy;
 using System.Windows.Forms;
 
 //MercadoPagoConfig.AccessToken = "ENV_ACCESS_TOKEN";
@@ -15,12 +16,18 @@ namespace Paobom
     public partial class FormMenuPrincipal : Form
     {
         private double qrcode = -1;
+        private int numCaixa = 0;
+        private decimal descontinho = 0;
+        private string formadepagamento = "";
+        private string voucher = "";
+        private int parcelas = 0;
+        private decimal total = 0;
         DataTable dtProdutos = new DataTable();
 
         public FormMenuPrincipal()
         {
             InitializeComponent();
-            lblHora.ForeColor = lblTotal.ForeColor = lbTotal.ForeColor = lblData.ForeColor = Color.FromArgb(0x9a, 0x7b, 0x4d);
+            lblCaixa.ForeColor = lblNumCaixa.ForeColor = lblHora.ForeColor = lblTotal.ForeColor = lbTotal.ForeColor = lblData.ForeColor = Color.FromArgb(0x9a, 0x7b, 0x4d);
             //dGVVendas.BackgroundColor = lblData.BackColor = lblHora.BackColor = lbTotal.BackColor = lblTotal.BackColor = Color.FromArgb(0x6d, 0x5d, 0x2a);
 
             /* Essa podridão do nonInvasiveKeyBoard não presta. */
@@ -99,8 +106,8 @@ namespace Paobom
             dGVVendas.ColumnHeadersVisible = false;
             dGVVendas.RowHeadersVisible = false;
 
-            dGVVendas.Columns[0].Width = 120;
-            dGVVendas.Columns[1].Width = 485;
+            dGVVendas.Columns[0].Width = 170;
+            dGVVendas.Columns[1].Width = 435;
             dGVVendas.Columns[2].Width = 120;
 
 
@@ -169,9 +176,7 @@ namespace Paobom
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-            /* Label Valor Total */
-            decimal total = 0;
-
+            tBCódigo.Focus();
             foreach (DataGridViewRow linha in dGVVendas.Rows)
             {
                 if (linha.Cells[2].Value != null)
@@ -179,7 +184,7 @@ namespace Paobom
                     string totalString = linha.Cells[2].Value.ToString();
                     totalString = totalString.Substring(3);
 
-                    total += Convert.ToDecimal(totalString);
+                    total = Convert.ToDecimal(totalString);
                 }
             }
 
@@ -191,6 +196,15 @@ namespace Paobom
             else
             {
                 lblTotal.Text = lbTotal.Text = "";
+            }
+
+            if (numCaixa != 0)
+            {
+                lblNumCaixa.Text = numCaixa.ToString();
+            }
+            else
+            {
+                lblNumCaixa.Text = "";
             }
 
 
@@ -227,7 +241,38 @@ namespace Paobom
         {
             if (dGVVendas.Rows.Count > 0)
             {
-                MessageBox.Show("Compra finalizada");
+                var resposta = MessageBox.Show("O cliente possuí desconto?", "Sistema", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+                if (resposta == DialogResult.Yes)
+                {
+                    FormDesconto desconto = new FormDesconto();
+                    desconto.ShowDialog();
+                    descontinho = desconto.getDesconto();
+                }
+                FormFormaDePagamento pagamento = new FormFormaDePagamento();
+                pagamento.ShowDialog();
+
+
+                dGVVendas.SelectAll();
+                foreach (DataGridViewRow linhas in dGVVendas.SelectedRows)
+                {
+                    dGVVendas.Rows.Remove(linhas); 
+                }
+                SqlConnection conexao = new SqlConnection(BD.StringConexao);
+                conexao.Open();
+
+                formadepagamento = pagamento.getFormaDePagamento();
+                parcelas = pagamento.getParcelas();
+                string sql = "INSERT INTO vendas(vend_datahora, vend_valortotal, vend_desconto, vend_voucher, vend_caixa, vend_parcela, vend_pagamento) VALUES (GETDATE(), @total, @desconto, @voucher, @numCaixa, @parcelas, @formadepagamento)";
+                SqlCommand comando = new SqlCommand(sql, conexao);
+                comando.Parameters.AddWithValue("@total", total);
+                comando.Parameters.AddWithValue("@desconto", descontinho);
+                comando.Parameters.AddWithValue("@voucher", voucher);
+                comando.Parameters.AddWithValue("@numCaixa", numCaixa);
+                comando.Parameters.AddWithValue("@parcelas", parcelas);
+                comando.Parameters.AddWithValue("@formadepagamento", formadepagamento);
+                comando.ExecuteNonQuery();
+                conexao.Close();
+
             }
             else
             {
@@ -263,6 +308,15 @@ namespace Paobom
                     }
                     break;
             }
+        }
+
+        private void lblCaixa_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Insira o número do caixa", "Sistema", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            FormCaixa caixa = new FormCaixa();
+            caixa.ShowDialog();
+            numCaixa = caixa.getCaixa();
+
         }
     }
 }

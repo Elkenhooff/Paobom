@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormListaProdutos));
             dGVProdutos = new DataGridView();
             ((System.ComponentModel.ISupportInitialize)dGVProdutos).BeginInit();
             SuspendLayout();
@@ -36,7 +37,7 @@
             // 
             dGVProdutos.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             dGVProdutos.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dGVProdutos.Location = new Point(14, 22);
+            dGVProdutos.Location = new Point(14, 13);
             dGVProdutos.Margin = new Padding(5, 4, 5, 4);
             dGVProdutos.Name = "dGVProdutos";
             dGVProdutos.Size = new Size(1219, 625);
@@ -46,6 +47,7 @@
             // 
             AutoScaleDimensions = new SizeF(11F, 22F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             ClientSize = new Size(1256, 660);
             Controls.Add(dGVProdutos);
             Font = new Font("Arial", 14F);

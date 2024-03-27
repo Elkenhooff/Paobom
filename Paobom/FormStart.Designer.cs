@@ -136,6 +136,7 @@
             Name = "FormPaoBom";
             Text = "Paobom";
             WindowState = FormWindowState.Maximized;
+            FormClosing += FormPaoBom_FormClosing;
             KeyDown += FormPaoBom_KeyDown;
             menuStrip1.ResumeLayout(false);
             menuStrip1.PerformLayout();

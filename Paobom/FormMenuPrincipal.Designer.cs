@@ -30,7 +30,6 @@
         {
             components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormMenuPrincipal));
-            button1 = new Button();
             dGVVendas = new DataGridView();
             tBCódigo = new TextBox();
             lbTotal = new Label();
@@ -38,20 +37,10 @@
             lblTotal = new Label();
             lblData = new Label();
             lblHora = new Label();
+            lblCaixa = new Label();
+            lblNumCaixa = new Label();
             ((System.ComponentModel.ISupportInitialize)dGVVendas).BeginInit();
             SuspendLayout();
-            // 
-            // button1
-            // 
-            button1.Location = new Point(408, 137);
-            button1.Margin = new Padding(4);
-            button1.Name = "button1";
-            button1.Size = new Size(170, 35);
-            button1.TabIndex = 0;
-            button1.Text = "Testar Banco";
-            button1.UseVisualStyleBackColor = true;
-            button1.Click += button1_Click;
-            button1.KeyDown += pressionarTecla;
             // 
             // dGVVendas
             // 
@@ -69,10 +58,13 @@
             // 
             // tBCódigo
             // 
-            tBCódigo.Location = new Point(408, 100);
+            tBCódigo.BackColor = Color.Black;
+            tBCódigo.BorderStyle = BorderStyle.None;
+            tBCódigo.ForeColor = Color.White;
+            tBCódigo.Location = new Point(13, 846);
             tBCódigo.Margin = new Padding(4);
             tBCódigo.Name = "tBCódigo";
-            tBCódigo.Size = new Size(170, 29);
+            tBCódigo.Size = new Size(170, 22);
             tBCódigo.TabIndex = 2;
             tBCódigo.KeyDown += pressionarTecla;
             // 
@@ -82,11 +74,11 @@
             lbTotal.BackColor = Color.Transparent;
             lbTotal.Font = new Font("Arial", 46F);
             lbTotal.ForeColor = Color.Olive;
-            lbTotal.Location = new Point(1028, 765);
+            lbTotal.Location = new Point(1057, 765);
             lbTotal.Name = "lbTotal";
-            lbTotal.Size = new Size(356, 69);
+            lbTotal.Size = new Size(327, 69);
             lbTotal.TabIndex = 4;
-            lbTotal.Text = "R$ 11111,11";
+            lbTotal.Text = "R$ 1111,11";
             // 
             // timer1
             // 
@@ -129,6 +121,30 @@
             lblHora.TabIndex = 10;
             lblHora.Text = "15:11";
             // 
+            // lblCaixa
+            // 
+            lblCaixa.AutoSize = true;
+            lblCaixa.BackColor = Color.Transparent;
+            lblCaixa.Font = new Font("Arial", 46F);
+            lblCaixa.ForeColor = SystemColors.ControlLight;
+            lblCaixa.Location = new Point(39, 78);
+            lblCaixa.Name = "lblCaixa";
+            lblCaixa.Size = new Size(187, 69);
+            lblCaixa.TabIndex = 12;
+            lblCaixa.Text = "Caixa";
+            lblCaixa.Click += lblCaixa_Click;
+            // 
+            // lblNumCaixa
+            // 
+            lblNumCaixa.AutoSize = true;
+            lblNumCaixa.BackColor = Color.Transparent;
+            lblNumCaixa.Font = new Font("Arial", 46F);
+            lblNumCaixa.ForeColor = SystemColors.ControlLight;
+            lblNumCaixa.Location = new Point(232, 78);
+            lblNumCaixa.Name = "lblNumCaixa";
+            lblNumCaixa.Size = new Size(0, 69);
+            lblNumCaixa.TabIndex = 13;
+            // 
             // FormMenuPrincipal
             // 
             AutoScaleDimensions = new SizeF(11F, 22F);
@@ -136,15 +152,16 @@
             BackColor = Color.Snow;
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             ClientSize = new Size(1440, 881);
+            Controls.Add(lblNumCaixa);
+            Controls.Add(lblCaixa);
             Controls.Add(lblHora);
             Controls.Add(lblData);
             Controls.Add(lblTotal);
             Controls.Add(lbTotal);
             Controls.Add(tBCódigo);
             Controls.Add(dGVVendas);
-            Controls.Add(button1);
             Font = new Font("Arial", 14F);
-            FormBorderStyle = FormBorderStyle.FixedSingle;
+            FormBorderStyle = FormBorderStyle.None;
             Margin = new Padding(5);
             MaximizeBox = false;
             MinimizeBox = false;
@@ -160,8 +177,6 @@
         }
 
         #endregion
-
-        private Button button1;
         private DataGridView dGVVendas;
         private TextBox tBCódigo;
         private Label lbTotal;
@@ -169,5 +184,7 @@
         private Label lblTotal;
         private Label lblData;
         private Label lblHora;
+        private Label lblCaixa;
+        private Label lblNumCaixa;
     }
 }

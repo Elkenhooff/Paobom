@@ -99,3 +99,8 @@ C:\Users\pedro.hdsantos4\source\repos\Paobom\Paobom\obj\Debug\net8.0-windows\Pao
 C:\Users\aluno\source\repos\Paobom\Paobom\obj\Debug\net8.0-windows\Paobom.FormLoginDiario.resources
 C:\Users\aluno\source\repos\Paobom\Paobom\obj\Debug\net8.0-windows\Paobom.FormSenhaDiaria.resources
 C:\Users\aluno\source\repos\Paobom\Paobom\obj\Debug\net8.0-windows\Paobom.FormVendas.resources
+C:\Users\pedro.hdsantos4\source\repos\Paobom\Paobom\obj\Debug\net8.0-windows\Paobom.FormCaixa.resources
+C:\Users\pedro.hdsantos4\source\repos\Paobom\Paobom\obj\Debug\net8.0-windows\Paobom.FormDesconto.resources
+C:\Users\pedro.hdsantos4\source\repos\Paobom\Paobom\obj\Debug\net8.0-windows\Paobom.FormFormaDePagamento.resources
+C:\Users\pedro.hdsantos4\source\repos\Paobom\Paobom\obj\Debug\net8.0-windows\Paobom.FormVoucher.resources
+C:\Users\pedro.hdsantos4\source\repos\Paobom\Paobom\obj\Debug\net8.0-windows\Paobom.FormParcelas.resources

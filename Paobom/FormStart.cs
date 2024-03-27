@@ -89,12 +89,24 @@ namespace Paobom
             {
                 ativarSistema();
             }
+            if (e.Control && e.KeyCode == Keys.F8)
+            {
+                this.FormClosing -= FormPaoBom_FormClosing;
+                this.Close();
+            }
         }
 
         private void vendasToolStripMenuItem_Click(object sender, EventArgs e)
         {
             FormVendas vendas = new FormVendas();
             vendas.ShowDialog();
+        }
+
+        private void FormPaoBom_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            var impedirFechamento = MessageBox.Show("Você não pode fechar a aplicação sem a permissão", "Aviso!!!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+            e.Cancel = (impedirFechamento == DialogResult.OK);
         }
     }
 }

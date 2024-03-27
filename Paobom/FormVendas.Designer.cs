@@ -28,8 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-            dataGridView1 = new DataGridView();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormVendas));
+            dGVVendas = new DataGridView();
             gBvendas = new GroupBox();
+            comboBox1 = new ComboBox();
+            label7 = new Label();
+            button1 = new Button();
             maskedTextBox6 = new MaskedTextBox();
             label6 = new Label();
             maskedTextBox5 = new MaskedTextBox();
@@ -42,24 +46,22 @@
             label2 = new Label();
             maskedTextBox1 = new MaskedTextBox();
             label1 = new Label();
-            button1 = new Button();
-            label7 = new Label();
-            comboBox1 = new ComboBox();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dGVVendas).BeginInit();
             gBvendas.SuspendLayout();
             SuspendLayout();
             // 
-            // dataGridView1
+            // dGVVendas
             // 
-            dataGridView1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(12, 167);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.Size = new Size(1396, 678);
-            dataGridView1.TabIndex = 0;
+            dGVVendas.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            dGVVendas.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dGVVendas.Location = new Point(12, 167);
+            dGVVendas.Name = "dGVVendas";
+            dGVVendas.Size = new Size(1396, 678);
+            dGVVendas.TabIndex = 0;
             // 
             // gBvendas
             // 
+            gBvendas.BackColor = Color.Transparent;
             gBvendas.Controls.Add(comboBox1);
             gBvendas.Controls.Add(label7);
             gBvendas.Controls.Add(button1);
@@ -75,12 +77,43 @@
             gBvendas.Controls.Add(label2);
             gBvendas.Controls.Add(maskedTextBox1);
             gBvendas.Controls.Add(label1);
+            gBvendas.ForeColor = Color.Chocolate;
             gBvendas.Location = new Point(12, 12);
             gBvendas.Name = "gBvendas";
             gBvendas.Size = new Size(507, 149);
             gBvendas.TabIndex = 1;
             gBvendas.TabStop = false;
             gBvendas.Text = "Filtro";
+            // 
+            // comboBox1
+            // 
+            comboBox1.FormattingEnabled = true;
+            comboBox1.Items.AddRange(new object[] { "Crédito", "Débito", "Dinheiro", "Ticket-Alimentação", "Sodexo", "VR", "Alelo" });
+            comboBox1.Location = new Point(395, 50);
+            comboBox1.Name = "comboBox1";
+            comboBox1.Size = new Size(106, 30);
+            comboBox1.TabIndex = 13;
+            // 
+            // label7
+            // 
+            label7.AutoSize = true;
+            label7.ForeColor = Color.Chocolate;
+            label7.Location = new Point(395, 25);
+            label7.Name = "label7";
+            label7.Size = new Size(107, 22);
+            label7.TabIndex = 10;
+            label7.Text = "Pagamento";
+            // 
+            // button1
+            // 
+            button1.ForeColor = Color.Chocolate;
+            button1.Location = new Point(395, 107);
+            button1.Name = "button1";
+            button1.Size = new Size(106, 29);
+            button1.TabIndex = 2;
+            button1.Text = "Pesquisar";
+            button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click;
             // 
             // maskedTextBox6
             // 
@@ -93,6 +126,7 @@
             // label6
             // 
             label6.AutoSize = true;
+            label6.ForeColor = Color.Chocolate;
             label6.Location = new Point(274, 82);
             label6.Name = "label6";
             label6.Size = new Size(57, 22);
@@ -110,6 +144,7 @@
             // label5
             // 
             label5.AutoSize = true;
+            label5.ForeColor = Color.Chocolate;
             label5.Location = new Point(274, 25);
             label5.Name = "label5";
             label5.Size = new Size(84, 22);
@@ -127,6 +162,7 @@
             // label4
             // 
             label4.AutoSize = true;
+            label4.ForeColor = Color.Chocolate;
             label4.Location = new Point(118, 82);
             label4.Name = "label4";
             label4.Size = new Size(155, 22);
@@ -144,6 +180,7 @@
             // label3
             // 
             label3.AutoSize = true;
+            label3.ForeColor = Color.Chocolate;
             label3.Location = new Point(118, 25);
             label3.Name = "label3";
             label3.Size = new Size(150, 22);
@@ -161,6 +198,7 @@
             // label2
             // 
             label2.AutoSize = true;
+            label2.ForeColor = Color.Chocolate;
             label2.Location = new Point(6, 82);
             label2.Name = "label2";
             label2.Size = new Size(71, 22);
@@ -178,46 +216,21 @@
             // label1
             // 
             label1.AutoSize = true;
+            label1.ForeColor = Color.Chocolate;
             label1.Location = new Point(6, 25);
             label1.Name = "label1";
             label1.Size = new Size(49, 22);
             label1.TabIndex = 0;
             label1.Text = "Data";
             // 
-            // button1
-            // 
-            button1.Location = new Point(395, 107);
-            button1.Name = "button1";
-            button1.Size = new Size(106, 29);
-            button1.TabIndex = 2;
-            button1.Text = "Pesquisar";
-            button1.UseVisualStyleBackColor = true;
-            // 
-            // label7
-            // 
-            label7.AutoSize = true;
-            label7.Location = new Point(395, 25);
-            label7.Name = "label7";
-            label7.Size = new Size(107, 22);
-            label7.TabIndex = 10;
-            label7.Text = "Pagamento";
-            // 
-            // comboBox1
-            // 
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Items.AddRange(new object[] { "Crédito", "Débito", "Dinheiro", "Ticket-Alimentação", "Sodexo", "VR", "Alelo" });
-            comboBox1.Location = new Point(395, 50);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(106, 30);
-            comboBox1.TabIndex = 13;
-            // 
             // FormVendas
             // 
             AutoScaleDimensions = new SizeF(11F, 22F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             ClientSize = new Size(1420, 857);
             Controls.Add(gBvendas);
-            Controls.Add(dataGridView1);
+            Controls.Add(dGVVendas);
             Font = new Font("Arial", 14F);
             FormBorderStyle = FormBorderStyle.Fixed3D;
             Margin = new Padding(5, 4, 5, 4);
@@ -226,7 +239,7 @@
             Name = "FormVendas";
             Text = "Vendas";
             WindowState = FormWindowState.Maximized;
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dGVVendas).EndInit();
             gBvendas.ResumeLayout(false);
             gBvendas.PerformLayout();
             ResumeLayout(false);
@@ -234,7 +247,7 @@
 
         #endregion
 
-        private DataGridView dataGridView1;
+        private DataGridView dGVVendas;
         private GroupBox gBvendas;
         private MaskedTextBox maskedTextBox1;
         private Label label1;

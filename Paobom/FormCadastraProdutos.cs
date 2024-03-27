@@ -68,6 +68,7 @@ namespace Paobom
 
                     comando.ExecuteNonQuery();
                     MessageBox.Show("Produto inserido com sucesso", "Paobom", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    limparCampos();
                     conexao.Close();
 
                 }
@@ -80,7 +81,13 @@ namespace Paobom
             else
             {
                 MessageBox.Show("Por favor preencha todos os campos", "Sistema" , MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }         
+            }           
+        }
+        public void limparCampos()
+        {
+            txtBarra.Text = txtNome.Text = mTBoxValor.Text = rTBObservacao.Text = "";
+            cBCategoria.SelectedIndex = -1;
+            cBoxMedida.SelectedIndex = -1;
         }
     }
 }

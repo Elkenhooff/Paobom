@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormListaFuncionarios));
             dGVFuncionarios = new DataGridView();
             ((System.ComponentModel.ISupportInitialize)dGVFuncionarios).BeginInit();
             SuspendLayout();
@@ -45,6 +46,7 @@
             // 
             AutoScaleDimensions = new SizeF(11F, 22F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             ClientSize = new Size(1257, 660);
             Controls.Add(dGVFuncionarios);
             Font = new Font("Arial", 14F);
