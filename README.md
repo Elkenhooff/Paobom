@@ -13,7 +13,7 @@ A imagem abaixo mostra a tela inicial da aplicação, onde os usuários podem in
 ![Inicío da aplicação](./Paobom/img/gitFormStart.png)
 
 
-#Alterações a ser feitas
+# Alterações a ser feitas
 - Adicionar alteração de produto/funcionários
 - Filtro de pesquisa em vendas, funcionários e produtos
 - Bug presente no valor total (A soma não é efetuada quando mais de um produto é adicionado e a multiplicação não é feita corretamente)
