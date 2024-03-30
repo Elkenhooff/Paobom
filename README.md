@@ -43,3 +43,4 @@ A imagem abaixo mostra o gerenciamento de vendas da aplicação, onde os usuári
 - Bug presente no valor total (A soma não é efetuada quando mais de um produto é adicionado e a multiplicação não é feita corretamente).
 - Modificar as MaskedTextBox dos valores (No atual momento elas estão formatadas da seguinte maneira 'R$  ____,__'), minha ideia é remover o 'R$ ' e adiciona-lo como label.
 - Ao finalizar a compra a forma crédito não está sendo efetuada da maneira correta (Algum erro na instancia e no showdialog do formulário parcelas).
+- Impossível de cadastrar o primeiro funcionário já que não há gerentes disponíveis no banco de dados, logo não é possível adicionar um 'Supervisor' ao primeiro funcionário cadastrado.
