@@ -23,14 +23,14 @@ A imagem abaixo mostra o menu principal da aplicação, onde os usuários podem 
 <h2>Cadastro de funcionários e produtos</h2>
 A imagem abaixo mostra o cadastro da aplicação, onde os usuários podem efetuar o cadastro de seus funcionários e de seus produtos.
 
-![Cadastro de Funcionário](./Paobom/img/gitCadastroFuncionario.png)
-![Cadastro de Produtos](./Paobom/img/gitCadastroProduto.png)
+![Cadastro de Funcionário](./Paobom/img/gitCadastraFuncionario.png)
+![Cadastro de Produtos](./Paobom/img/gitCadastraProduto.png)
 
 <h2>Lista funcionários e produtos</h2>
 A imagem abaixo mostra a listagem da aplicação, onde os usuários podem visualizar o cadastro de seus funcionários e de seus produtos.
 
 ![Lista Funcionários](./Paobom/img/gitListaFuncionario.png)
-![Lista Produtos](./Paobom/img/gitListaProdutos.png)
+![Lista Produtos](./Paobom/img/gitListaProduto.png)
 
 <h2>Vendas</h2>
 A imagem abaixo mostra o gerenciamento de vendas da aplicação, onde os usuários podem visualizar as vendas efetuadas.
