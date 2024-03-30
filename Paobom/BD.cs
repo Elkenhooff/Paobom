@@ -9,14 +9,14 @@ namespace Paobom
         {
             string caminhoUsuario = Environment.GetFolderPath(Environment.SpecialFolder.UserProfile); // Pega o caminho do usuário 'Exemplo : C:\Users\usuario'
             string caminhoDownloads = Path.Combine(caminhoUsuario, "Downloads"); // Adiciona o caminho do usuário + 'Downloads' o que indica que ele pegárá o caminho de Downloads 'C:\Users\usuario\Downloads'
-            string caminhoSource = Path.Combine(caminhoUsuario, "source"); // Adiciona o caminho do usuário + 'source' (Pasta onde se localiza os projetos do Visual Studio) o que indica que ele pegárá o caminho de source 'C:\Users\usuario\source'
+            //string caminhoSource = Path.Combine(caminhoUsuario, "source"); // Adiciona o caminho do usuário + 'source' (Pasta onde se localiza os projetos do Visual Studio) o que indica que ele pegárá o caminho de source 'C:\Users\usuario\source'
             string caminhoDesktop = Environment.GetFolderPath(Environment.SpecialFolder.Desktop); // Pega o caminho do Desktop (Área de Trabalho) 'C:\Users\usuario\Área de Trabalho'
 
             //A aplicação (ou em especifico a pasta 'BD' localizada na aplicação) deve ser mantida em algum dessas pastas para funcionar o banco de dados (Downloads, Área de Trabalho ou source)
 
             string[] pastas =
             [
-                caminhoDownloads, caminhoSource, caminhoDesktop // Armazena as pastas em um array para procurar pelo arquivo futuramente
+                caminhoDownloads, caminhoDesktop // Armazena as pastas em um array para procurar pelo arquivo futuramente
             ];
 
             foreach (string pastaEncontrada in pastas) // foreach = Em cada 'pastaEncontrada' em 'pastas' significa que o código passará por cada pasta encontrada
