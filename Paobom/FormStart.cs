@@ -7,7 +7,7 @@ namespace Paobom
         public FormPaoBom()
         {
             InitializeComponent();
-            BD.ProcurarArquivo("BDPaoBom.mdf");
+            //BD.ProcurarArquivo("BDPaoBom.mdf");
 
 
             // Podridão abaixo.

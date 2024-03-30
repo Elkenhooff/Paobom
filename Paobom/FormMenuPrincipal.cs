@@ -1,6 +1,6 @@
 ﻿//using NonInvasiveKeyboardHookLibrary;
 using System.Data;
-using System.Data.SqlClient;
+using MySql.Data.MySqlClient;
 using System.Security.Policy;
 using System.Windows.Forms;
 
@@ -133,12 +133,12 @@ namespace Paobom
 
         public DataTable buscarValor()
         {
-            SqlConnection conexao = new SqlConnection(BD.StringConexao);
+            MySqlConnection conexao = new MySqlConnection(BD.StringConexao);
             conexao.Open();
 
             string sql = $"SELECT pro_codigo, pro_nome, pro_valor FROM produtos WHERE pro_codigo = {qrcode};";
             DataTable dt = new DataTable();
-            SqlDataAdapter adapter = new SqlDataAdapter(sql, conexao);
+            MySqlDataAdapter adapter = new MySqlDataAdapter(sql, conexao);
             adapter.Fill(dt);
 
             conexao.Close();
@@ -257,13 +257,13 @@ namespace Paobom
                 {
                     dGVVendas.Rows.Remove(linhas); 
                 }
-                SqlConnection conexao = new SqlConnection(BD.StringConexao);
+                MySqlConnection conexao = new MySqlConnection(BD.StringConexao);
                 conexao.Open();
 
                 formadepagamento = pagamento.getFormaDePagamento();
                 parcelas = pagamento.getParcelas();
                 string sql = "INSERT INTO vendas(vend_datahora, vend_valortotal, vend_desconto, vend_voucher, vend_caixa, vend_parcela, vend_pagamento) VALUES (GETDATE(), @total, @desconto, @voucher, @numCaixa, @parcelas, @formadepagamento)";
-                SqlCommand comando = new SqlCommand(sql, conexao);
+                MySqlCommand comando = new MySqlCommand(sql, conexao);
                 comando.Parameters.AddWithValue("@total", total);
                 comando.Parameters.AddWithValue("@desconto", descontinho);
                 comando.Parameters.AddWithValue("@voucher", voucher);

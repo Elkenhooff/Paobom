@@ -1,0 +1,14 @@
+C:\Users\ricar\source\repos\Paobom\Paobom\bin\Release\net8.0-windows\app.publish\Paobom.exe
+C:\Users\ricar\source\repos\Paobom\Paobom\bin\Release\net8.0-windows\app.publish\Paobom.dll
+C:\Users\ricar\source\repos\Paobom\Paobom\bin\Release\net8.0-windows\app.publish\Paobom.deps.json
+C:\Users\ricar\source\repos\Paobom\Paobom\bin\Release\net8.0-windows\app.publish\Paobom.runtimeconfig.json
+C:\Users\ricar\source\repos\Paobom\Paobom\bin\Release\net8.0-windows\app.publish\Paobom.pdb
+C:\Users\ricar\source\repos\Paobom\Paobom\bin\Release\net8.0-windows\app.publish\MercadoPago.dll
+C:\Users\ricar\source\repos\Paobom\Paobom\bin\Release\net8.0-windows\app.publish\Newtonsoft.Json.dll
+C:\Users\ricar\source\repos\Paobom\Paobom\bin\Release\net8.0-windows\app.publish\NonInvasiveKeyboardHookLibrary.Core.dll
+C:\Users\ricar\source\repos\Paobom\Paobom\bin\Release\net8.0-windows\app.publish\System.Data.SqlClient.dll
+C:\Users\ricar\source\repos\Paobom\Paobom\bin\Release\net8.0-windows\app.publish\runtimes\win-arm64\native\sni.dll
+C:\Users\ricar\source\repos\Paobom\Paobom\bin\Release\net8.0-windows\app.publish\runtimes\win-x64\native\sni.dll
+C:\Users\ricar\source\repos\Paobom\Paobom\bin\Release\net8.0-windows\app.publish\runtimes\win-x86\native\sni.dll
+C:\Users\ricar\source\repos\Paobom\Paobom\bin\Release\net8.0-windows\app.publish\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
+C:\Users\ricar\source\repos\Paobom\Paobom\bin\Release\net8.0-windows\app.publish\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll

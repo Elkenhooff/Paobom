@@ -2,7 +2,8 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
-using System.Data.SqlClient;
+//using System.Data.SqlClient;
+using MySql.Data.MySqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -22,12 +23,12 @@ namespace Paobom
 
         public DataTable listaFuncionarios()
         {
-            SqlConnection conexao = new SqlConnection(BD.StringConexao);
+            MySqlConnection conexao = new MySqlConnection(BD.StringConexao);
             conexao.Open();
 
             string sql = "SELECT * FROM funcionarios ORDER BY func_nome;";
 
-            SqlDataAdapter sqlDataAdapter = new SqlDataAdapter(sql, conexao);
+            MySqlDataAdapter sqlDataAdapter = new MySqlDataAdapter(sql, conexao);
             DataTable dt = new DataTable();
 
             sqlDataAdapter.Fill(dt);

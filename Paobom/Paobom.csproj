@@ -10,7 +10,7 @@
 
   <ItemGroup>
     <PackageReference Include="mercadopago-sdk" Version="2.3.7" />
-    <PackageReference Include="NonInvasiveKeyboardHookLibrary.Core" Version="2.1.0" />
+    <PackageReference Include="MySql.Data" Version="8.3.0" />
     <PackageReference Include="System.Data.SqlClient" Version="4.8.6" />
   </ItemGroup>
 

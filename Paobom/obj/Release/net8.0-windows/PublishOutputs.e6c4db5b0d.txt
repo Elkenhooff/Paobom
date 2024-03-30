@@ -1,0 +1,14 @@
+C:\Users\ricar\Downloads\Paobom.exe
+C:\Users\ricar\Downloads\Paobom.dll
+C:\Users\ricar\Downloads\Paobom.deps.json
+C:\Users\ricar\Downloads\Paobom.runtimeconfig.json
+C:\Users\ricar\Downloads\Paobom.pdb
+C:\Users\ricar\Downloads\MercadoPago.dll
+C:\Users\ricar\Downloads\Newtonsoft.Json.dll
+C:\Users\ricar\Downloads\NonInvasiveKeyboardHookLibrary.Core.dll
+C:\Users\ricar\Downloads\System.Data.SqlClient.dll
+C:\Users\ricar\Downloads\runtimes\win-arm64\native\sni.dll
+C:\Users\ricar\Downloads\runtimes\win-x64\native\sni.dll
+C:\Users\ricar\Downloads\runtimes\win-x86\native\sni.dll
+C:\Users\ricar\Downloads\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
+C:\Users\ricar\Downloads\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
